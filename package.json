@@ -1,0 +1,30 @@
+{
+  "name": "eslint-config-vision",
+  "description": "Sharable eslint config for Vision",
+  "version": "1.0.0",
+  "author": "Rainfore <rainforest92@126.com>",
+  "repository": "vision-app/eslint-config",
+  "bugs": {
+    "url": "https://github.com/vision-app/eslint-config/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslintconfig",
+    "vision"
+  ],
+  "tags": [
+    "eslint",
+    "eslint-config",
+    "eslintconfig",
+    "vision"
+  ],
+  "devDependencies": {
+    "eslint": "^3.15.0"
+  }
+}
