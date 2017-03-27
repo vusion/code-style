@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-vision",
   "description": "Sharable eslint config for Vision",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Rainfore <rainforest92@126.com>",
   "repository": "vision-app/eslint-config",
   "bugs": {
