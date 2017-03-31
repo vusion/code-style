@@ -14,7 +14,7 @@ module.exports = {
         'no-await-in-loop': [2],
         'no-compare-neg-zero': [2],
         'no-cond-assign': [2, 'except-parens'],
-        'no-console': [2, { allow: ['warn', 'error'] }],
+        'no-console': [2, { allow: ['info', 'warn', 'error'] }],
         'no-constant-condition': [2],
         'no-control-regex': [2],
         'no-debugger': [2],

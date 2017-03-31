@@ -1,11 +1,11 @@
 {
-  "name": "eslint-config-vision",
-  "description": "Sharable eslint config for Vision",
-  "version": "1.1.0",
+  "name": "eslint-config-vusion",
+  "description": "Sharable eslint config for Vusion",
+  "version": "1.0.0",
   "author": "Rainfore <rainforest92@126.com>",
-  "repository": "vision-app/eslint-config",
+  "repository": "vusion/eslint-config",
   "bugs": {
-    "url": "https://github.com/vision-app/eslint-config/issues"
+    "url": "https://github.com/vusion/eslint-config/issues"
   },
   "main": "index.js",
   "scripts": {
@@ -16,13 +16,13 @@
     "eslint",
     "eslint-config",
     "eslintconfig",
-    "vision"
+    "vusion"
   ],
   "tags": [
     "eslint",
     "eslint-config",
     "eslintconfig",
-    "vision"
+    "vusion"
   ],
   "peerDependencies": {
     "eslint": "^3.18.0"
