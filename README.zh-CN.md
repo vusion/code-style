@@ -441,6 +441,26 @@ for (let i = 0; i < count; i++)
     doSomething();
 ```
 
+#### 要求单行语句必须换行。🔧
+[nonblock-statement-body-position](http://eslint.cn/docs/rules/nonblock-statement-body-position)
+
+``` javascript
+// ✗ bad
+if (foo) return;
+while (cond) doSomething();
+for (let i = 0; i < count; i++) doSomething();
+
+// ✓ good
+if (foo)
+    return;
+
+while (cond)
+    doSomething();
+
+for (let i = 0; i < count; i++)
+    doSomething();
+```
+
 ## 分号和逗号
 #### 强制使用分号，禁止多余的分号。🔧
 [semi](http://eslint.cn/docs/rules/semi), [no-extra-semi](http://eslint.cn/docs/rules/no-extra-semi), [no-unexpected-multiline](http://eslint.cn/docs/rules/no-unexpected-multiline)
@@ -1215,6 +1235,17 @@ if (num === NaN) { /* ... */ }
 if (isNaN(num)) { /* ... */ }
 ```
 
+#### 禁止与`-0`比较，除非使用`Object.is`。
+[no-compare-neg-zero](http://eslint.cn/docs/rules/no-compare-neg-zero)
+
+``` javascript
+// ✗ bad
+if (x === -0) { /* ... */ }
+// ✓ good
+if (x === 0) { /* ... */ }
+if (Object.is(x, -0)) { /* ... */ }
+```
+
 ## 函数和箭头函数
 #### 要求使用函数表达式，而不是函数声明。
 [func-style](http://eslint.cn/docs/rules/func-style), [no-inner-declarations](http://eslint.cn/docs/rules/no-inner-declarations), [no-func-assign](http://eslint.cn/docs/rules/no-func-assign)
@@ -1973,7 +2004,7 @@ alert('message');
 confirm('Are you sure?');
 ```
 
-#### 在生产环境禁止出现`console.log`和`debugger`，允许出现`console.warn`和`console.error`。
+#### 在生产环境禁止出现`console.log`和`debugger`，允许出现`console.info`、`console.warn`和`console.error`。
 [no-console](http://eslint.cn/docs/rules/no-console), [no-debugger](http://eslint.cn/docs/rules/no-debugger)
 
 ``` javascript
