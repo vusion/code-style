@@ -1,4 +1,23 @@
 # Vusion JavaScript 代码规范
+## 配置
+``` shell
+npm install --save-dev eslint eslint-config-vusion
+```
+
+然后创建`.eslintrc`文件，内容如下：
+
+``` json
+{
+    "extends": "vusion",
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}
+```
+
+具体可以参考[ESLint配置](http://eslint.cn/docs/user-guide/configuring)。
+
 ## 目录
 - [空白](#空白)
 - [块](#块)
@@ -2013,6 +2032,7 @@ console.log('code info.');
 debugger;
 
 // ✓ good
+console.info('Running in development mode.');
 console.warn('This method is deprecated.');
 console.error('Circular dependencies!')
 ```
