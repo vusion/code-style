@@ -11,6 +11,8 @@ module.exports = {
     },
     rules: {
         // Possible Errors
+        'for-direction': [2],
+        'getter-return': [2],
         'no-await-in-loop': [2],
         'no-compare-neg-zero': [2],
         'no-cond-assign': [2, 'except-parens'],
@@ -137,6 +139,7 @@ module.exports = {
         // @TODO: 'callback-return',
         // @TODO: 'global-require',
         // @TODO: 'handle-callback-err',
+        // @TODO: 'no-buffer-constructor',
         // @TODO: 'no-mixed-requires',
         'no-new-require': [2],
         // @TODO: 'no-path-concat',
@@ -146,7 +149,9 @@ module.exports = {
         // @TODO: 'no-sync',
 
         // Stylistic Issues
-        'array-bracket-spacing': [2, 'never'], // @TODO
+        'array-bracket-newline': [0], // @disagreed: too-strict
+        'array-bracket-spacing': [2, 'never'],
+        'array-element-newline': [0], // @disagreed: too-strict
         'block-spacing': [2, 'always'],
         'brace-style': [2, '1tbs', { allowSingleLine: true }],
         camelcase: [2],
@@ -171,7 +176,6 @@ module.exports = {
         // @unnessesary: 'line-comment-position': [2],
         'linebreak-style': [2],
         // @TODO: 'lines-around-comment',
-        'lines-around-directive': [2],
         // @useless: 'max-depth',
         // @useless: 'max-len',
         // @useless: 'max-lines',
@@ -182,15 +186,13 @@ module.exports = {
         'multiline-ternary': [2, 'never'],
         'new-cap': [2],
         'new-parens': [1],
-        // @unnessesary: 'newline-after-var',
-        // @unnessesary: 'newline-before-return',
         // @disagreed: 'newline-per-chained-call',
         'no-array-constructor': [2],
         // @disagreed: 'no-bitwise',
         // @useless: 'no-continue',
         // @useless: 'no-inline-comments',
         // @disagreed: 'no-lonely-if',
-        // @TODO: 'mixed-operators'
+        // @TODO: 'no-mixed-operators'
         'no-mixed-spaces-and-tabs': [2],
         // @disagreed: 'no-multi-assign',
         'no-multiple-empty-lines': [1, { max: 1, maxEOF: 1, maxBOF: 0 }],
@@ -214,11 +216,13 @@ module.exports = {
         // @TODO: 'operator-assignment',
         'operator-linebreak': [2, 'before'],
         'padded-blocks': [2, 'never'],
+        'padding-line-between-statements': [2, { blankLine: 'always', prev: 'directive', next: '*' }],
         'quote-props': [2, 'as-needed'],
         quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
         // @TODO: 'require-jsdoc',
         semi: [2, 'always', { omitLastInOneLineBlock: false }],
         'semi-spacing': [2],
+        'semi-style': [2],
         // @useless: 'sort-keys',
         // @useless: 'sort-vars',
         'space-before-blocks': [2],
@@ -227,6 +231,7 @@ module.exports = {
         'space-infix-ops': [2],
         'space-unary-ops': [2],
         'spaced-comment': [1],
+        'switch-colon-spacing': [2],
         'template-tag-spacing': [2, 'always'],
         'unicode-bom': [2],
         // @disagreed: 'wrap-regex',

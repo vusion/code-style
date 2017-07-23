@@ -167,21 +167,29 @@ let arr = [1, 2];
 a ? b: c;
 ```
 
-#### 要求分号、逗号、冒号之后必须有一个空格。🔧
-[semi-spacing](http://eslint.cn/docs/rules/semi-spacing), [comma-spacing](http://eslint.cn/docs/rules/comma-spacing), [key-spacing](http://eslint.cn/docs/rules/key-spacing)
+#### 要求分号、逗号、冒号之前没有空格，之后必须有一个空格。🔧
+[semi-spacing](http://eslint.cn/docs/rules/semi-spacing), [comma-spacing](http://eslint.cn/docs/rules/comma-spacing), [key-spacing](http://eslint.cn/docs/rules/key-spacing), [switch-colon-spacing](http://eslint.cn/docs/rules/switch-colon-spacing)
 
 ``` javascript
 // ✗ bad
 const arr = [1,2,3,4];
 const obj = { id:1,name:'Alice' };
 foo(a,b,c);
-for (let i = 0;i < 10;i++)
+for (let i = 0;i < 10;i++);
+switch (num) {
+    case 0 :break;
+    default :foo();
+}
 
 // ✓ good
 const arr = [1, 2];
 const obj = { id: 1, name: 'Alice' };
 foo(a, b, c);
-for (let i = 0; i < 10; i++)
+for (let i = 0; i < 10; i++);
+switch (num) {
+    case 0: break;
+    default: foo();
+}
 ```
 
 #### 禁止点号（属性、rest参数、扩展运算符）和单词之间有空格。🔧
@@ -481,19 +489,21 @@ for (let i = 0; i < count; i++)
 ```
 
 ## 分号和逗号
-#### 强制使用分号，禁止多余的分号。🔧
-[semi](http://eslint.cn/docs/rules/semi), [no-extra-semi](http://eslint.cn/docs/rules/no-extra-semi), [no-unexpected-multiline](http://eslint.cn/docs/rules/no-unexpected-multiline)
+#### 强制使用分号，并且只在行尾使用，禁止多余的分号。🔧
+[semi](http://eslint.cn/docs/rules/semi), [semi-style](http://eslint.cn/docs/rules/semi-style), [no-extra-semi](http://eslint.cn/docs/rules/no-extra-semi), [no-unexpected-multiline](http://eslint.cn/docs/rules/no-unexpected-multiline)
 
 ``` javascript
 // ✗ bad
 (function () {
     const name = 'Skywalker'
+    ;[1, 2, 3].forEach(bar)
     return name;;
 })()
 
 // ✓ good
 (function () {
     const name = 'Skywalker';
+    [1, 2, 3].forEach(bar);
     return name;
 })();
 ```
@@ -1575,6 +1585,37 @@ inbox.filter((msg) => {
 });
 ```
 
+#### 要求`getter`函数中必须要有`return`语句。
+[getter-return](http://eslint.org/docs/rules/getter-return)
+
+``` javascript
+// ✗ bad
+let student = {
+    get name() {
+        // no returns.
+    }
+};
+
+class Student {
+    get age() {
+        // no returns.
+    }
+}
+
+// ✓ good
+let student = {
+    get name() {
+        return 'nicholas';
+    }
+};
+
+class Student {
+    get age() {
+        return 18;
+    }
+}
+```
+
 ## 类和构造器
 #### 要求尽量使用`class`，避免手动操作`prototype`。
 ``` javascript
@@ -1802,7 +1843,7 @@ import { myFunc1 } from 'module';
 import { myFunc2 } from 'module';
 ```
 
-#### 禁止未使用过的表达式。
+#### 禁止出现未使用过的表达式。
 [no-unused-expressions](http://eslint.cn/docs/rules/no-unused-expressions)
 
 ``` javascript
@@ -1822,6 +1863,18 @@ delete a.b
 void a
 a && b()
 a ? b() : c()
+```
+
+#### 禁止`for`循环的计数器向错误的方向累计。
+[for-direction](http://eslint.cn/docs/rules/for-direction)
+
+``` javascript
+// ✗ bad
+for (let i = 0; i < 10; i--);
+for (let i = 10; i >= 0; i++);
+
+// ✓ good
+for (let i = 0; i < 10; i++);
 ```
 
 ## 其他
