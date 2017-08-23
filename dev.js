@@ -1,5 +1,5 @@
 module.exports = {
-    extends: './index',
+    extends: './index.js',
     rules: {
         // Possible Errors
         'no-console': [0],
