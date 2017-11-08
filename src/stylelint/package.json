@@ -1,0 +1,14 @@
+{
+  "name": "stylelint-config-vusion",
+  "description": "Sharable stylelint config for Vusion",
+  "version": "1.2.3",
+  "scripts": {
+    "test": "stylelint ../../test/*.vue ../../test/*.css ../../test/*.html & exit 0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "stylelint": "^8.2.0",
+    "stylelint-config-recommended": "^1.0.0",
+    "stylelint-processor-html": "^1.0.0"
+  }
+}

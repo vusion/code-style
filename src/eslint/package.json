@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js"
+    "test": "eslint -c ./.eslintrc ../../test/*.js ../../test/*.vue & exit 0"
   },
   "license": "MIT",
   "keywords": [
@@ -28,6 +28,8 @@
     "eslint": "^4.3.0"
   },
   "devDependencies": {
-    "eslint": "^4.3.0"
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-plugin-vue": "^3.13.1"
   }
 }

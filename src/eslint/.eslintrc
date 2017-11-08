@@ -1,6 +1,17 @@
 {
-    "extends": "./index.js",
-    "env": {
-        "commonjs": true
-    }
+    "extends": [
+        "./index.js", 
+        "plugin:vue/recommended"
+    ],
+    "plugins": [
+        "vue"
+    ],
+    "overrides": [{
+        "files": ["*.vue"],
+        "rules": {
+            "vue/return-in-computed-property": [2],
+            "vue/no-duplicate-attributes": [2],
+            "vue/attribute-hyphenation": [2, "always"]
+        }
+    }]
 }
