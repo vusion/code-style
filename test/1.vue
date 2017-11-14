@@ -18,6 +18,6 @@ export default {
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 10px;
-    width: 960px; 
+    width: 960px;
 }
 </style>

@@ -1,0 +1,11 @@
+{
+  "name": "code-style",
+  "description": "Sharable lint config for Vusion",
+  "version": "1.2.3",
+  "scripts": {
+    "stylelint": "cd src/stylelint & npm run test",
+    "eslint": "cd src/eslint & npm run test",
+    "alllint": "npm run stylelint & npm run eslint",
+    "install": "cd src/stylelint & npm install & cd ../../src/eslint & npm install"
+  }
+}
