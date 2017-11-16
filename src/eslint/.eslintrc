@@ -6,12 +6,9 @@
     "plugins": [
         "vue"
     ],
-    "overrides": [{
-        "files": ["*.vue"],
-        "rules": {
-            "vue/return-in-computed-property": [2],
-            "vue/no-duplicate-attributes": [2],
-            "vue/attribute-hyphenation": [2, "always"]
-        }
-    }]
+    "rules": {
+        "vue/return-in-computed-property": [2],
+        "vue/no-duplicate-attributes": [2],
+        "vue/attribute-hyphenation": [2, "always"]
+    }
 }
