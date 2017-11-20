@@ -45,7 +45,7 @@
 ```
 
 ## eslint在VSCode中配置
-- npm install -g eslint eslint-plugin-vue eslint-config-vue
+- 可全局安装：npm install -g eslint eslint-plugin-vue eslint-config-vue。 最好保证版本与src配置中package.json相同。
 - vscode中配置
 
 ``` json
@@ -59,4 +59,10 @@
         "html",
         "vue"
     ]
+```
+
+- 不全局安装eslint，使用code-style中的eslint：在vscode中加上：
+```json
+// 配置 Node.js 目录
+    "eslint.nodePath": "E:/code-style/src/eslint/node_modules",
 ```
