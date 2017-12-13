@@ -1,6 +1,5 @@
 module.exports = {
     parserOptions: {
-        parser: "babel-eslint",
         ecmaVersion: 2017,
         sourceType: 'module',
         ecmaFeatures: {
@@ -9,9 +8,6 @@ module.exports = {
     },
     env: {
         es6: true,
-        commonjs: true,
-        browser: true,
-        node: true
     },
     rules: {
         // Possible Errors
@@ -20,10 +16,10 @@ module.exports = {
         'no-await-in-loop': [2],
         'no-compare-neg-zero': [2],
         'no-cond-assign': [2, 'except-parens'],
-        'no-console': [2, { allow: ['info', 'warn', 'error'] }],
+        'no-console': [1, { allow: ['info', 'warn', 'error'] }],
         'no-constant-condition': [2],
         'no-control-regex': [2],
-        'no-debugger': [2],
+        'no-debugger': [1],
         'no-dupe-args': [2],
         'no-dupe-keys': [2],
         'no-duplicate-case': [2],

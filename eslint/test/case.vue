@@ -1,14 +1,18 @@
 <template>
-<article :class="$style.root">
-    <slot></slot>
-    {{z=1?x=1}}
-</article>
-<div v-if.bbb="foo"></div>
+    <article :class="$style.root">
+        <slot></slot>
+        <div v-if="foo"></div>
+    </article>
 </template>
 
 <script>
 export default {
     name: 'u-article',
+    methods: {
+        test() {
+            return 0;
+        },
+    },
 };
 </script>
 

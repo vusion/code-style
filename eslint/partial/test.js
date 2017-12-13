@@ -6,10 +6,5 @@ module.exports = {
         expect: true,
         assert: true,
     },
-    overrides: [{
-        files: ['*.spec.js'],
-        rules: {
-            'no-unused-expressions': [0],
-        },
-    }],
+    plugins: ['chai-friendly'],
 };

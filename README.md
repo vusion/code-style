@@ -1,7 +1,9 @@
-# Vusion Code Style
+# Vusion Style Guide
 
-- [JavaScript Style](src/eslint/README.md)
-- [Vue Style](src/eslint/vue-README.md)
+- [Editor Config](src/editor/README.md)
+- [ESLint Config](src/eslint/README.md)
+    - [JavaScript Style](src/eslint/JavaScript.md)
+    - [Vue Style](src/eslint/Vue.md)
 - [CSS Style](src/stylelint/README.md)
 
 ## 目录介绍

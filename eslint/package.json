@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "eslint -c ./.eslintrc ../../test/*.js ../../test/*.vue & exit 0"
+    "test": "eslint -c ./all.js ./test/*.js ./test/*.vue --fix"
   },
   "license": "MIT",
   "keywords": [
@@ -28,8 +28,12 @@
     "eslint": "^4.3.0"
   },
   "devDependencies": {
+    "eslint": "^4.3.0"
+  },
+  "dependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
-    "eslint-plugin-vue": "^3.13.1"
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-vue": "^4.0.0-beta.2",
+    "vue-eslint-parser": "^1.0.0"
   }
 }
