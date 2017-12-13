@@ -12,6 +12,27 @@
 ```
 该配置使用stylelint-config-recommended规则。
 
+## VSCode
+
+使用插件[vscode-stylelint](https://github.com/shinnn/vscode-stylelint/)
+
+``` json
+    // stylelint配置
+    "stylelint.enable": true, // 开启stylelint的配置
+    "css.validate": false,
+    "scss.validate": false,
+    "stylelint.config": { // 设置"stylelint.config"属性为绝对路径，统一所有css样式的风格。
+        "extends": "E:/code-style/src/stylelint/.stylelintrc"
+    },
+    "stylelint.additionalDocumentSelectors":[  // 对html和vue文件也进行检查。
+        "html",
+        "vue"
+    ]
+```
+
+该插件默认按照[该规则](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md#configuration)作为检查的配置文件。
+
+
 > 说明：
 > - 🔧表示可以使用--fix自动修复。
 
@@ -392,13 +413,13 @@ a { margin: 1px; }
 // ✗ bad
 a {
   content: "first
-    second";     
-}  
+    second";
+}
 
 // ✓ good
 a {
-  content: "first\\nsecond";     
-} 
+  content: "first\\nsecond";
+}
 ```
 
 #### unit-no-unknown
@@ -457,9 +478,9 @@ a { color: pink; }
 a { color: pink; top: 3px; }
 
 // ✓ good
-a { 
-    color: pink; 
-    top: 3px; 
+a {
+    color: pink;
+    top: 3px;
 }
 ```
 

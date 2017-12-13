@@ -41,6 +41,23 @@ npm install --save-dev eslint eslint-config-vusion
 }
 ```
 
+## 编辑器配置
+
+### VSCode
+
+如果要使用Vue相关的配置，需要配以下内容：
+
+```json
+"eslint.enable": true,
+"eslint.autoFixOnSave": true,
+"eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "html", "autoFix": true },
+    { "language": "vue", "autoFix": true }
+],
+```
+
 其它复杂情况可以参考[ESLint配置](http://eslint.cn/docs/user-guide/configuring)。
 
 ## 代码风格
