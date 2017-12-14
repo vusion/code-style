@@ -1,38 +1,4 @@
 # Vue Style
-## 配置
-使用[eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue)
-
-然后创建`.eslintrc`文件，内容如下：
-
-``` json
-{
-    "extends": [
-        "plugin:vue/recommended",
-    ],
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "plugins": [
-        "vue"
-    ],
-    "parserOptions": {
-        "parser": "babel-eslint",
-        "ecmaVersion": 2017,
-        "sourceType": "module"
-    },
-    "overrides": [{
-        "files": ["*.vue"],
-        "rules": {
-            "vue/return-in-computed-property": [2],
-            "vue/no-dupe-keys": [2, {
-                "groups": ["asyncComputed"]
-            }]
-        }
-    }]
-}
-
-```
 
 该配置使用recommend规则，以及部分其他规则。
 

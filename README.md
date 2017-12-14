@@ -1,10 +1,10 @@
 # Vusion Style Guide
 
-- [Editor Config](src/editor/README.md)
-- [ESLint Config](src/eslint/README.md)
-    - [JavaScript Style](src/eslint/JavaScript.md)
-    - [Vue Style](src/eslint/Vue.md)
-- [CSS Style](src/stylelint/README.md)
+- [Editor Config](editor/README.md)
+- [ESLint Config](eslint/README.md)
+    - [JavaScript Style](eslint/JavaScript.md)
+    - [Vue Style](eslint/Vue.md)
+- [CSS Style](stylelint/README.md)
 
 ## Development
 
