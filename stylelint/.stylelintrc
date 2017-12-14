@@ -25,6 +25,9 @@
        "selector-pseudo-element-case": ["lower"],
        "selector-pseudo-element-colon-notation": ["double"],
        "selector-type-case": ["lower"],
+       "property-case": ["lower"],
+       "unit-case": ["lower"],
+       "value-keyword-case": ["lower"],
        "selector-list-comma-newline-after": ["never-multi-line"],
     }
 }

@@ -2,7 +2,7 @@
 ## 配置
 使用[stylelint](https://github.com/stylelint/stylelint)
 
-然后创建`.stylelintrc`文件，内容如下：
+创建`.stylelintrc`文件，内容如下：
 
 ``` json
 {
@@ -21,10 +21,7 @@
     "stylelint.enable": true, // 开启stylelint的配置
     "css.validate": false,
     "scss.validate": false,
-    "stylelint.config": { // 设置"stylelint.config"属性为绝对路径，统一所有css样式的风格。
-        "extends": "E:/code-style/src/stylelint/.stylelintrc"
-    },
-    "stylelint.additionalDocumentSelectors":[  // 对html和vue文件也进行检查。
+    "stylelint.additionalDocumentSelectors":[  // 对html和vue文件也进行检查
         "html",
         "vue"
     ]
@@ -37,15 +34,28 @@
 > - 🔧表示可以使用--fix自动修复。
 
 ## 目录
-- [Recommended](#Recommended)
-- [自定义](#自定义)
+- [选择器](#选择器)
+- [属性声明](#属性声明)
+- [属性值规范](#属性值规范)
+- [缩进](#缩进)
+- [大小写](#大小写)
+- [其他](#其他)
 
-## Recommended
+## 选择器
 
-#### at-rule-no-unknown
+#### 禁止未知的媒体查询名
+[media-feature-name-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/media-feature-name-no-unknown/README.md)
+
+``` css
+// ✗ bad
+@media screen and (unknown) {}
+
+// ✓ good
+@media (min-width: 700px) {}
+```
+
+#### 禁止非法的@规则
 [at-rule-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/at-rule-no-unknown/README.md)
-
-不允许出现非法的@规则
 
 ``` css
 // ✗ bad
@@ -56,113 +66,80 @@
 @media (max-width: 960px) {}
 ```
 
-#### block-no-empty
-[block-no-empty](https://github.com/stylelint/stylelint/blob/master/lib/rules/block-no-empty/README.md)
-
-不允许出现空块
+#### 禁止未知的伪类选择器
+[selector-pseudo-class-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-class-no-unknown/README.md)
 
 ``` css
 // ✗ bad
-a { }
+a:hoverr {}
 
 // ✓ good
-a { color: pink; }
+a:hover {}
 ```
 
-#### color-no-invalid-hex
-[color-no-invalid-hex](https://github.com/stylelint/stylelint/blob/master/lib/rules/color-no-invalid-hex/README.md)
-
-color属性不允许不合法的十六进制
+#### 禁止未知的伪元素选择器
+[selector-pseudo-element-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-element-no-unknown/README.md)
 
 ``` css
 // ✗ bad
-a { color: #y3 }
+a::element {}
 
 // ✓ good
-a { color: #000; }
+a::before {}
 ```
 
-#### comment-no-empty
-[comment-no-empty](https://github.com/stylelint/stylelint/blob/master/lib/rules/comment-no-empty/README.md)
-
-不允许空注释
+#### 禁止未知的属性
+[selector-type-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-type-no-unknown/README.md)
 
 ``` css
 // ✗ bad
-/**/
-/* */
-/*
-
- */
+tag {}
 
 // ✓ good
-/* comment */
-/*
- * Multi-line Comment
-**/
+input {}
 ```
 
-#### declaration-block-no-duplicate-properties
+#### 属性选择器中的属性值不添加冒号
+[selector-attribute-quotes](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-quotes/README.md)
+
+``` css
+// ✗ bad
+[title] {}
+[target="_blank"] {}
+[class|="top"] {}
+[title~='text'] {}
+[data-attribute='component'] {}
+
+// ✓ good
+[title=flower] {}
+[class^=top] {}
+```
+
+## 属性声明
+
+#### 禁止属性重复声明（允许连续且值不同的属性重复声明）
 [declaration-block-no-duplicate-properties](https://github.com/stylelint/stylelint/blob/master/lib/rules/declaration-block-no-duplicate-properties/README.md)
-
-不允许属性重复声明
 
 ``` css
 // ✗ bad
 a { color: pink; color: orange; }
+p {
+  font-size: 16px;
+  font-weight: 400;
+  font-size: 1rem;
+}
 
 // ✓ good
 a { color: pink; }
-```
-
-##### 选项配置
-- ignore: ["consecutive-duplicates"]：允许连续的属性重复声明
-``` css
-// ✗ bad
-p {
-  font-size: 16px;
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-// ✓ good
 p {
   font-size: 16px;
   font-size: 1rem;
   font-weight: 400;
 }
 ```
-- ignore: ["consecutive-duplicates-with-different-values"]：允许连续且值不同的属性重复声明
-``` css
-// ✗ bad
-p {
-  font-size: 16px;
-  font-weight: 400;
-  font-size: 1rem;
-}
 
-// ✓ good
-p {
-  font-size: 16px;
-  font-size: 1rem;
-  font-weight: 400;
-}
-```
-- ignoreProperties: ["/regex/", "non-regex"]：允许指定的属性重复声明
-对于["color", "/background\-/"]
-``` css
-// ✗ bad
-a { color: pink; background: orange; background: white; }
-
-// ✓ good
-a { color: pink; color: orange; background-color: orange; background-color: white; }
-```
-stylelint-config-recommended中使用的是：ignore: ["consecutive-duplicates-with-different-values"]
-
-#### declaration-block-no-redundant-longhand-properties
+#### 禁止可以合成的属性展开
 [declaration-block-no-redundant-longhand-properties](https://github.com/stylelint/stylelint/blob/master/lib/rules/declaration-block-no-redundant-longhand-properties/README.md)
-
-不允许可以合成的属性展开
 
 ``` css
 // ✗ bad
@@ -183,14 +160,10 @@ a {
     padding-left: 10px;
 }
 ```
-##### 选项配置
-- ignoreShorthands: ["/regex/", "string"]：允许指定的属性不简写。
 
-#### declaration-block-no-shorthand-property-overrides
+#### 禁止简写属性覆盖普通写法的属性
 [declaration-block-no-shorthand-property-overrides](https://github.com/stylelint/stylelint/blob/master/lib/rules/declaration-block-no-shorthand-property-overrides/README.md)
 
-不允许简写属性覆盖普通写法的属性
-
 ``` css
 // ✗ bad
 a {
@@ -205,138 +178,19 @@ a {
 }
 ```
 
-#### font-family-no-duplicate-names
-[font-family-no-duplicate-names](https://github.com/stylelint/stylelint/blob/master/lib/rules/font-family-no-duplicate-names/README.md)
-
-不允许重复字体属性声明
+#### 禁止简写属性中有冗余的值
+[shorthand-property-no-redundant-values](https://github.com/stylelint/stylelint/blob/master/lib/rules/shorthand-property-no-redundant-values/README.md)
 
 ``` css
 // ✗ bad
-a { font-family: 'Times', Times, serif; }
+a { margin: 1px 1px; }
 
 // ✓ good
-a { font-family: Times, serif; }
-```
-##### 选项配置
-- ignoreFontFamilyNames: ["/regex/", "string"]：允许指定的属性重复。
-
-#### function-calc-no-unspaced-operator
-[function-calc-no-unspaced-operator](https://github.com/stylelint/stylelint/blob/master/lib/rules/function-calc-no-unspaced-operator/README.md)
-
-calc函数中操作符两边必须有空格
-
-``` css
-// ✗ bad
-a { top: calc(1px+2px); }
-
-// ✓ good
-a { top: calc(1px + 2px); }
+a { margin: 1px; }
 ```
 
-#### function-linear-gradient-no-nonstandard-direction
-[function-linear-gradient-no-nonstandard-direction](https://github.com/stylelint/stylelint/blob/master/lib/rules/function-linear-gradient-no-nonstandard-direction/README.md)
-
-不允许`linear-gradient()`中的方向属性值不符合[标准语法](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient#Syntax).
-
-``` css
-// ✗ bad
-.foo { background: linear-gradient(top, #fff, #000); }
-.foo { background: linear-gradient(45, #fff, #000); }
-.foo { background: linear-gradient(to top top, #fff, #000); }
-
-// ✓ good
-.foo { background: linear-gradient(to top, #fff, #000); }
-.foo { background: linear-gradient(45deg, #fff, #000); }
-.foo { background: linear-gradient(1.57rad, #fff, #000); }
-```
-
-#### keyframe-declaration-no-important
-[keyframe-declaration-no-important](https://github.com/stylelint/stylelint/blob/master/lib/rules/keyframe-declaration-no-important/README.md)
-
-keyframe中不允许使用!important来提升优先级。
-
-在keyframe中使用`!important`会被某些浏览器忽略:  [MDN - !important in a keyframe](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes#!important_in_a_keyframe)
-
-``` css
-// ✗ bad
-@keyframes important1 {
-  from {
-    margin-top: 50px;
-  }
-  to {
-    margin-top: 100px !important;
-  }
-}
-
-// ✓ good
-a { color: pink !important; }
-
-@keyframes important1 {
-  from {
-    margin-top: 50px;
-  }
-  to {
-    margin-top: 100px;
-  }
-}
-```
-
-#### media-feature-name-no-unknown
-[media-feature-name-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/media-feature-name-no-unknown/README.md)
-
-不允许未知的媒体查询名
-
-``` css
-// ✗ bad
-@media screen and (unknown) {}
-
-// ✓ good
-@media (min-width: 700px) {}
-```
-
-#### no-empty-source
-[no-empty-source](https://github.com/stylelint/stylelint/blob/master/lib/rules/no-empty-source/README.md)
-
-不允许空文件
-
-``` css
-// ✗ bad
-\t\t
-
-// ✓ good
-a {}
-```
-
-#### no-extra-semicolons
-[no-extra-semicolons](https://github.com/stylelint/stylelint/blob/master/lib/rules/no-extra-semicolons/README.md)
-
-不允许多余的分号
-
-``` css
-// ✗ bad
-@import "x.css";;
-
-// ✓ good
-@import "x.css";
-```
-
-#### no-invalid-double-slash-comments
-[no-invalid-double-slash-comments](https://github.com/stylelint/stylelint/blob/master/lib/rules/no-invalid-double-slash-comments/README.md)
-
-不允许双斜线的注释
-
-``` css
-// ✗ bad
-a { // color: pink; }
-
-// ✓ good
-a { /* color: pink; */ }
-```
-
-#### property-no-unknown
+#### 禁止未知的属性名
 [property-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/property-no-unknown/README.md)
-
-不允许未知的属性名
 
 ``` css
 // ✗ bad
@@ -350,64 +204,111 @@ a {
 }
 ```
 
-#### selector-pseudo-class-no-unknown
-[selector-pseudo-class-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-class-no-unknown/README.md)
+## 属性值规范
 
-不允许未知的伪类选择器
-
-``` css
-// ✗ bad
-a:hoverr {}
-
-// ✓ good
-a:hover {}
-```
-
-#### selector-pseudo-element-no-unknown
-[selector-pseudo-element-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-element-no-unknown/README.md)
-
-不允许未知的伪元素选择器
+#### 禁止重复字体属性
+[font-family-no-duplicate-names](https://github.com/stylelint/stylelint/blob/master/lib/rules/font-family-no-duplicate-names/README.md)
 
 ``` css
 // ✗ bad
-a::element {}
+a { font-family: 'Times', Times, serif; }
 
 // ✓ good
-a::before {}
+a { font-family: Times, serif; }
 ```
-##### 选项配置
-- ignorePseudoElements: ["/regex/", "string"]：允许未知的伪元素名。
 
-#### selector-type-no-unknown
-[selector-type-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-type-no-unknown/README.md)
-
-不允许未知的属性
+#### 禁止不规范的单位
+[unit-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/unit-no-unknown/README.md)
 
 ``` css
 // ✗ bad
-tag {}
+a {
+  width: 10pixels;
+}
 
 // ✓ good
-input {}
+a {
+  width: 10px;
+}
 ```
 
-#### shorthand-property-no-redundant-values
-[shorthand-property-no-redundant-values](https://github.com/stylelint/stylelint/blob/master/lib/rules/shorthand-property-no-redundant-values/README.md)
-
-不允许简写属性中有冗余的值
+#### 禁止浏览器引擎前缀
+[value-no-vendor-prefix](https://github.com/stylelint/stylelint/blob/master/lib/rules/value-no-vendor-prefix/README.md)
 
 ``` css
 // ✗ bad
-a { margin: 1px 1px; }
+a { display: -webkit-flex; }
 
 // ✓ good
-a { margin: 1px; }
+a { display: flex; }
+```
+#### 禁止!important
+[declaration-no-important](https://github.com/stylelint/stylelint/blob/master/lib/rules/declaration-no-important/README.md)
+
+``` css
+// ✗ bad
+a { color: pink !important; }
+
+// ✓ good
+a { color: pink; }
+```
+#### 禁止尾随零
+[number-no-trailing-zeros](https://github.com/stylelint/stylelint/blob/master/lib/rules/number-no-trailing-zeros/README.md)
+
+``` css
+// ✗ bad
+a { top: 1.0px }
+
+// ✓ good
+a { top: 1px }
 ```
 
-#### string-no-newline
+#### 禁止前导零
+[number-leading-zero](https://github.com/stylelint/stylelint/blob/master/lib/rules/number-leading-zero/README.md)
+
+``` css
+// ✗ bad
+a { font-size: 0.3rem; }
+
+// ✓ good
+a { font-size: .3rem; }
+```
+#### 禁止color属性值为不合法的十六进制
+[color-no-invalid-hex](https://github.com/stylelint/stylelint/blob/master/lib/rules/color-no-invalid-hex/README.md)
+
+``` css
+// ✗ bad
+a { color: #y3 }
+
+// ✓ good
+a { color: #000; }
+```
+#### calc函数中操作符两边必须有空格
+[function-calc-no-unspaced-operator](https://github.com/stylelint/stylelint/blob/master/lib/rules/function-calc-no-unspaced-operator/README.md)
+
+``` css
+// ✗ bad
+a { top: calc(1px+2px); }
+
+// ✓ good
+a { top: calc(1px + 2px); }
+```
+#### `linear-gradient()`中的方向属性值必须符合[标准语法](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient#Syntax)
+[function-linear-gradient-no-nonstandard-direction](https://github.com/stylelint/stylelint/blob/master/lib/rules/function-linear-gradient-no-nonstandard-direction/README.md)
+
+``` css
+// ✗ bad
+.foo { background: linear-gradient(top, #fff, #000); }
+.foo { background: linear-gradient(45, #fff, #000); }
+.foo { background: linear-gradient(to top top, #fff, #000); }
+
+// ✓ good
+.foo { background: linear-gradient(to top, #fff, #000); }
+.foo { background: linear-gradient(45deg, #fff, #000); }
+.foo { background: linear-gradient(1.57rad, #fff, #000); }
+```
+#### 禁止字符串换行
 [string-no-newline](https://github.com/stylelint/stylelint/blob/master/lib/rules/string-no-newline/README.md)
-
-不允许字符串中换行
 
 ``` css
 // ✗ bad
@@ -422,56 +323,281 @@ a {
 }
 ```
 
-#### unit-no-unknown
-[unit-no-unknown](https://github.com/stylelint/stylelint/blob/master/lib/rules/unit-no-unknown/README.md)
+## 缩进
 
-不允许未知的单位
+#### 缩进为四个空格 🔧
+[indentation](https://github.com/stylelint/stylelint/blob/master/lib/rules/indentation/README.md)
+
+``` css
+// ✗ bad
+a{
+color:#fff;
+}
+
+// ✓ good
+a{
+    color:#fff;
+}
+```
+
+#### 整行注释前必须有空行 🔧
+[comment-empty-line-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/comment-empty-line-before/README.md)
+
+``` css
+// ✗ bad
+a {}
+/* comment */
+
+// ✓ good
+a {}
+
+/* comment */
+
+a {} /* comment */
+```
+
+#### 每块样式定义之间禁止空行 🔧
+[rule-empty-line-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/rule-empty-line-before/README.md)
+
+``` css
+// ✗ bad
+a {}
+
+b {}
+
+// ✓ good
+a {}
+b {}
+```
+
+#### 选择器与`{`之间需要空格
+[block-opening-brace-space-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/block-opening-brace-space-before/README.md)
+
+
+``` css
+// ✗ bad
+a{ color: pink; }
+a
+{ color: pink; }
+
+// ✓ good
+a { color: pink; }
+```
+#### 禁止属性选择器中的空格
+[selector-attribute-brackets-space-inside](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-brackets-space-inside/README.md), [selector-attribute-operator-space-after](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-operator-space-after/README.md), [selector-attribute-operator-space-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-operator-space-before/README.md) 
+
+``` css
+// ✗ bad
+[ target] {}
+[target ] {}
+[ target =_blank] {}
+[target=_blank ] {}
+
+// ✓ good
+[target] {}
+[target=_blank] {}
+```
+#### 伪类括号内禁止空格
+[selector-pseudo-class-parentheses-space-inside](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md)
+
+``` css
+// ✗ bad
+input:not( [type="submit"] ) {}
+input:not( [type="submit"]) {}
+
+// ✓ good
+input:not([type="submit"]) {}
+```
+
+#### 选择器之间必须有空格
+[selector-combinator-space-after](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-combinator-space-after/README.md), [selector-combinator-space-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-combinator-space-before/README.md), [selector-descendant-combinator-no-non-space](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-descendant-combinator-no-non-space/README.md)
+
+``` css
+// ✗ bad
+a +b { color: pink; }
+a>b { color: pink; }
+
+// ✓ good
+a + b { color: pink; }
+a> b { color: pink; }
+.foo .bar {}
+```
+
+#### 多行选择器逗号后不允许空白符
+[selector-list-comma-newline-after](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-list-comma-newline-after/README.md)
+
+``` css
+// ✗ bad
+a
+, b { color: pink; }
+
+a,
+b { color: pink; }
+
+// ✓ good
+a,b { color: pink; }
+
+a
+,b { color: pink; }
+
+```
+
+## 大小写
+#### @标签小写 🔧
+[at-rule-name-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/at-rule-name-case/README.md)
+
+``` css
+// ✗ bad
+@Charset 'UTF-8';
+
+// ✓ good
+@charset 'UTF-8';
+```
+#### 属性名小写
+[property-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/property-case/README.md)
 
 ``` css
 // ✗ bad
 a {
-  width: 10pixels;
+  Width: 1px;
 }
 
 // ✓ good
 a {
-  width: 10px;
+  width: 1px;
 }
 ```
-
-## 自定义
-
-#### value-no-vendor-prefix
-[value-no-vendor-prefix](https://github.com/stylelint/stylelint/blob/master/lib/rules/value-no-vendor-prefix/README.md)
-
-不允许写属性前缀
+#### 单位小写
+[unit-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/unit-case/README.md)
 
 ``` css
 // ✗ bad
-a { display: -webkit-flex; }
+a {
+  width: 1PX;
+}
 
 // ✓ good
-a { display: flex; }
+a {
+  width: 1px;
+}
 ```
-
-#### declaration-no-important
-[declaration-no-important](https://github.com/stylelint/stylelint/blob/master/lib/rules/declaration-no-important/README.md)
-
-不允许使用!important
+#### 属性值小写
+[value-keyword-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/value-keyword-case/README.md)
 
 ``` css
 // ✗ bad
-a { color: pink !important; }
+a {
+  display: BLOCK;
+}
+
+// ✓ good
+a {
+  display: block;
+}
+```
+#### 伪元素小写
+[selector-pseudo-element-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-element-case/README.md)
+
+``` css
+// ✗ bad
+a::BEFORE {}
+
+// ✓ good
+a::before {}
+```
+#### 伪类小写
+[selector-pseudo-class-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-class-case/README.md)
+``` css
+// ✗ bad
+a:Hover {}
+a:HOVER {}
+:ROOT {}
+
+// ✓ good
+a:hover {}
+:root {}
+```
+#### 属性名小写
+[selector-type-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-type-case/README.md)
+
+``` css
+// ✗ bad
+A {}
+LI {}
+
+// ✓ good
+a {}
+li {}
+```
+
+## 其他
+
+#### 禁止空块
+[block-no-empty](https://github.com/stylelint/stylelint/blob/master/lib/rules/block-no-empty/README.md)
+
+不允许出现空块
+
+``` css
+// ✗ bad
+a { }
 
 // ✓ good
 a { color: pink; }
 ```
 
-#### declaration-block-single-line-max-declarations
-[declaration-block-single-line-max-declarations](https://github.com/stylelint/stylelint/blob/master/lib/rules/declaration-block-single-line-max-declarations/README.md)
+#### 禁止空注释
+[comment-no-empty](https://github.com/stylelint/stylelint/blob/master/lib/rules/comment-no-empty/README.md)
 
-定义了css样式每列最多的属性个数
-当设置`"declaration-block-single-line-max-declarations": [1]`时：
+``` css
+// ✗ bad
+/**/
+/* */
+/*
+
+ */
+
+// ✓ good
+/* comment */
+/*
+ * Multi-line Comment
+**/
+```
+
+#### 禁止空文件
+[no-empty-source](https://github.com/stylelint/stylelint/blob/master/lib/rules/no-empty-source/README.md)
+
+``` css
+// ✗ bad
+\t\t
+
+// ✓ good
+a {}
+```
+
+#### 禁止多余的分号
+[no-extra-semicolons](https://github.com/stylelint/stylelint/blob/master/lib/rules/no-extra-semicolons/README.md)
+
+``` css
+// ✗ bad
+@import "x.css";;
+
+// ✓ good
+@import "x.css";
+```
+
+#### 禁止双斜线的注释
+[no-invalid-double-slash-comments](https://github.com/stylelint/stylelint/blob/master/lib/rules/no-invalid-double-slash-comments/README.md)
+
+``` css
+// ✗ bad
+a { // color: pink; }
+
+// ✓ good
+a { /* color: pink; */ }
+```
+
+#### 每行最多定义一个属性
+[declaration-block-single-line-max-declarations](https://github.com/stylelint/stylelint/blob/master/lib/rules/declaration-block-single-line-max-declarations/README.md)
 
 ``` css
 // ✗ bad
@@ -483,12 +609,8 @@ a {
     top: 3px;
 }
 ```
-
-#### max-nesting-depth
+#### 禁止嵌套定义
 [max-nesting-depth](https://github.com/stylelint/stylelint/blob/master/lib/rules/max-nesting-depth/README.md)
-
-定义了嵌套层级的上限
-当设置`"max-nesting-depth": [0]`时：
 
 ``` css
 // ✗ bad
@@ -508,698 +630,19 @@ div h1{
 }
 ```
 
-#### number-no-trailing-zeros
-[number-no-trailing-zeros](https://github.com/stylelint/stylelint/blob/master/lib/rules/number-no-trailing-zeros/README.md)
-
-不允许尾随零
-
-``` css
-// ✗ bad
-a { top: 1.0px }
-
-// ✓ good
-a { top: 1px }
-```
-
-#### number-leading-zero
-[number-leading-zero](https://github.com/stylelint/stylelint/blob/master/lib/rules/number-leading-zero/README.md)
-
-不允许小数点前的0。
-- 设置为"number-leading-zero": ["never"]时：
-
-``` css
-// ✗ bad
-a { font-size: 0.3rem; }
-
-// ✓ good
-a { font-size: .3rem; }
-```
-- 设置为"number-leading-zero": ["always"]时：
-
-``` css
-// ✗ bad
-a { font-size: .3rem; }
-
-// ✓ good
-a { font-size: 0.3rem; }
-```
-
-#### indentation 🔧
-[indentation](https://github.com/stylelint/stylelint/blob/master/lib/rules/indentation/README.md)
-
-设置缩进
-- 设置为"indentation": [4]时：
-
-``` css
-// ✗ bad
-a{
-color:#fff;
-}
-
-// ✓ good
-a{
-    color:#fff;
-}
-```
-
-#### comment-empty-line-before 🔧
-[comment-empty-line-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/comment-empty-line-before/README.md)
-
-设置缩进
-- 设置为"comment-empty-line-before": ["always"]时：
-
-``` css
-// ✗ bad
-a {}
-/* comment */
-
-// ✓ good
-a {}
-
-/* comment */
-
-a {} /* comment */
-```
-- 设置为"comment-empty-line-before": ["never"]时：
-
-``` css
-// ✗ bad
-a {}
-
-/* comment */
-
-// ✓ good
-a {}
-/* comment */
-
-a {} /* comment */
-```
-
-#### at-rule-name-case 🔧
-[at-rule-name-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/at-rule-name-case/README.md)
-
-设置缩进
-- 设置为"at-rule-name-case": ["lower"]时：
-
-``` css
-// ✗ bad
-@Charset 'UTF-8';
-
-// ✓ good
-@charset 'UTF-8';
-```
-- 设置为"at-rule-name-case": ["upper"]时：
-
-``` css
-// ✗ bad
-@Charset 'UTF-8';
-
-// ✓ good
-@CHARSET 'UTF-8';
-```
-
-#### rule-empty-line-before 🔧
-[rule-empty-line-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/rule-empty-line-before/README.md)
-
-设置语句之间是否需要空行
-
-- 设置为"rule-empty-line-before": ["always"]时：
-
-``` css
-// ✗ bad
-a {}
-
-b {}
-
-// ✓ good
-a {}
-b {}
-
-// ✓ good
-a {} b {}
-```
-- 设置为"rule-empty-line-before": ["never"]时：
-
-``` css
-// ✗ bad
-@Charset 'UTF-8';
-
-// ✓ good
-@CHARSET 'UTF-8';
-```
-- 设置为"rule-empty-line-before": ["always-multi-line"]时：在多行规则前，必须有空行
-
-``` css
-// ✗ bad
-a {
-  color: red;
-}
-b {
-  color: blue;
-}
-
-// ✓ good
-a {
-  color: red;
-}
-
-b {
-  color: blue;
-}
-```
-- 设置为"rule-empty-line-before": ["never-multi-line"]时：在多行规则前，不允许有空行
-
-``` css
-// ✗ bad
-a {
-  color: red;
-}
-
-b {
-  color: blue;
-}
-
-// ✓ good
-a {
-  color: red;
-}
-b {
-  color: blue;
-}
-```
-
-#### block-opening-brace-space-before
-[block-opening-brace-space-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/block-opening-brace-space-before/README.md)
-
-设置选择器与"{"之间是否需要空格
-- 设置为"block-opening-brace-space-before": ["always"]时：需要空格
-
-``` css
-// ✗ bad
-a{ color: pink; }
-a
-{ color: pink; }
-
-// ✓ good
-a { color: pink; }
-```
-- 设置为"block-opening-brace-space-before": ["never"]时：不允许空格
-
-``` css
-// ✗ bad
-a { color: pink; }
-a
-{ color: pink; }
-
-// ✓ good
-a{ color: pink; }
-a{
-color: pink; }
-```
-- 设置为"block-opening-brace-space-before": ["always-single-line"]时：一行的样式需要空格
-
-``` css
-// ✗ bad
-a{ color: pink; }
-
-// ✓ good
-a { color: pink; }
-a{
-color: pink; }
-```
-- 设置为"block-opening-brace-space-before": ["never-single-line"]时：一行的样式不允许空格
-
-``` css
-// ✗ bad
-a { color: pink; }
-
-// ✓ good
-a{ color: pink; }
-a {
-color: pink; }
-```
-- 设置为"block-opening-brace-space-before": ["always-multi-line"]时：多的样式需要空格
-
-``` css
-// ✗ bad
-a{
-color: pink; }
-
-// ✓ good
-a{ color: pink; }
-a {
-color: pink; }
-```
-- 设置为"block-opening-brace-space-before": ["never-multi-line"]时：多的样式不允许空格
-
-``` css
-// ✗ bad
-a {
-color: pink; }
-
-// ✓ good
-a { color: pink; }
-a{
-color: pink; }
-```
-##### 选项配置
-- ignoreAtRules: ["/regex/", "non-regex"]：允许符合条件的属性不按照如上空格要求。
-
-#### selector-attribute-brackets-space-inside
-[selector-attribute-brackets-space-inside](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-brackets-space-inside/README.md)
-
-设置属性选择器的中括号中是否需要空格
-- 设置为"selector-attribute-brackets-space-inside": ["always"]时：需要空格
-
-``` css
-// ✗ bad
-[target] {}
-[ target] {}
-[target ] {}
-[target=_blank] {}
-[ target=_blank] {}
-[target=_blank ] {}
-
-// ✓ good
-[ target ] {}
-[ target=_blank ] {}
-```
-- 设置为"selector-attribute-brackets-space-inside": ["never"]时：不允许空格
-
-``` css
-// ✗ bad
-[ target] {}
-[target ] {}
-[ target=_blank] {}
-[target=_blank ] {}
-
-// ✓ good
-[target] {}
-[target=_blank] {}
-```
-#### selector-attribute-operator-space-after
-[selector-attribute-operator-space-after](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-operator-space-after/README.md)
-
-设置属性选择器中操作符后是否需要空格
-- 设置为"selector-attribute-operator-space-after": ["always"]时：需要空格
-
-``` css
-// ✗ bad
-[target=_blank] {}
-[target =_blank] {}
-[target='_blank'] {}
-[target="_blank"] {}
-[target ='_blank'] {}
-[target ="_blank"] {}
-
-// ✓ good
-[target] {}
-[target= _blank] {}
-[target= '_blank'] {}
-[target= "_blank"] {}
-[target = _blank] {}
-[target = '_blank'] {}
-[target = "_blank"] {}
-```
-- 设置为"selector-attribute-operator-space-after": ["never"]时：不允许空格
-
-``` css
-// ✗ bad
-[target= _blank] {}
-[target = _blank] {}
-[target= '_blank'] {}
-[target= "_blank"] {}
-[target = '_blank'] {}
-[target = "_blank"] {}
-
-// ✓ good
-[target] {}
-[target=_blank] {}
-[target='_blank'] {}
-[target="_blank"] {}
-[target =_blank] {}
-[target ='_blank'] {}
-[target ="_blank"] {}
-```
-#### selector-attribute-operator-space-before
-[selector-attribute-operator-space-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-operator-space-before/README.md)
-
-设置属性选择器中操作符前是否需要空格
-- 设置为"selector-attribute-operator-space-before": ["always"]时：需要空格
-
-``` css
-// ✗ bad
-[target=_blank] {}
-[target= _blank] {}
-[target='_blank'] {}
-[target="_blank"] {}
-[target= '_blank'] {}
-[target= "_blank"] {}
-
-// ✓ good
-[target] {}
-[target =_blank] {}
-[target ='_blank'] {}
-[target ="_blank"] {}
-[target = _blank] {}
-[target = '_blank'] {}
-[target = "_blank"] {}
-```
-- 设置为"selector-attribute-operator-space-before": ["never"]时：不允许空格
-
-``` css
-// ✗ bad
-[target =_blank] {}
-[target = _blank] {}
-[target ='_blank'] {}
-[target ="_blank"] {}
-[target = '_blank'] {}
-[target = "_blank"] {}
-
-// ✓ good
-[target] {}
-[target=_blank] {}
-[target='_blank'] {}
-[target="_blank"] {}
-[target= _blank] {}
-[target= '_blank'] {}
-[target= "_blank"] {}
-```
-#### selector-attribute-quotes
-[selector-attribute-quotes](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-quotes/README.md)
-
-设置属性选择器中属性值是否需要冒号
-- 设置为"selector-attribute-quotes": ["always"]时：需要冒号
-
-``` css
-// ✗ bad
-[title=flower] {}
-[class^=top] {}
-
-// ✓ good
-[title] {}
-[target="_blank"] {}
-[class|="top"] {}
-[title~='text'] {}
-[data-attribute='component'] {}
-```
-- 设置为"selector-attribute-quotes": ["never"]时：不允许冒号
-
-``` css
-// ✗ bad
-[title] {}
-[target="_blank"] {}
-[class|="top"] {}
-[title~='text'] {}
-[data-attribute='component'] {}
-
-// ✓ good
-[title=flower] {}
-[class^=top] {}
-```
-#### selector-combinator-space-after
-[selector-combinator-space-after](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-combinator-space-after/README.md)
-
-选择器的连接符后是否需要空格
-- 设置为"selector-combinator-space-after": ["always"]时：需要空格
-
-``` css
-// ✗ bad
-a +b { color: pink; }
-a>b { color: pink; }
-
-// ✓ good
-a + b { color: pink; }
-a> b { color: pink; }
-```
-- 设置为"selector-combinator-space-after": ["never"]时：不允许空格
-
-``` css
-// ✗ bad
-a + b { color: pink; }
-a> b { color: pink; }
-
-// ✓ good
-a +b { color: pink; }
-a>b { color: pink; }
-```
-#### selector-combinator-space-before
-[selector-combinator-space-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-combinator-space-before/README.md)
-
-选择器的连接符后是否需要空格
-- 设置为"selector-combinator-space-before": ["always"]时：需要空格
-
-``` css
-// ✗ bad
-a+ b { color: pink; }
-a>b { color: pink; }
-
-// ✓ good
-a + b { color: pink; }
-a >b { color: pink; }
-```
-- 设置为"selector-combinator-space-before": ["never"]时：不允许空格
-
-``` css
-// ✗ bad
-a + b { color: pink; }
-a >b { color: pink; }
-
-// ✓ good
-a+b { color: pink; }
-a>b { color: pink; }
-```
-#### selector-descendant-combinator-no-non-space
-[selector-descendant-combinator-no-non-space](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-descendant-combinator-no-non-space/README.md)
-
-层级选择器的中间是否使用一个空格间隔
-
-``` css
-// ✗ bad
-.foo  .bar {}
-
-.foo
-.bar {}
-
-// ✓ good
-.foo .bar {}
-```
-#### selector-pseudo-class-case
-[selector-pseudo-class-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-class-case/README.md)
-
-规定伪类大小写
-- 设置为"selector-pseudo-class-case": ["lower"]时：使用小写
-
-``` css
-// ✗ bad
-a:Hover {}
-a:hOvEr {}
-a:HOVER {}
-:ROOT {}
-:-MS-INPUT-PLACEHOLDER {}
-
-// ✓ good
-a:hover {}
-:root {}
-:-ms-input-placeholder {}
-```
-- 设置为"selector-pseudo-class-case": ["upper"]时：使用大写
-
-``` css
-// ✗ bad
-a:Hover {}
-a:hOvEr {}
-a:hover {}
-:root {}
-:-ms-input-placeholder {}
-
-// ✓ good
-a:HOVER {}
-:ROOT {}
-:-MS-INPUT-PLACEHOLDER {}
-```
-#### selector-pseudo-class-parentheses-space-inside
-[selector-pseudo-class-parentheses-space-inside](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md)
-
-规定伪类括号内是否需要空格
-- 设置为"selector-pseudo-class-parentheses-space-inside": ["always"]时：需要空格
-
-``` css
-// ✗ bad
-input:not([type="submit"]) {}
-input:not([type="submit"] ) {}
-
-// ✓ good
-input:not( [type="submit"] ) {}
-```
-- 设置为"selector-pseudo-class-parentheses-space-inside": ["never"]时：不允许空格
-
-``` css
-// ✗ bad
-input:not( [type="submit"] ) {}
-input:not( [type="submit"]) {}
-
-// ✓ good
-input:not([type="submit"]) {}
-```
-#### selector-pseudo-element-case
-[selector-pseudo-element-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-element-case/README.md)
-
-规定伪元素大小写
-- 设置为"selector-pseudo-element-case": ["lower"]时：使用小写
-
-``` css
-// ✗ bad
-a:Before {}
-a:bEfOrE {}
-a:BEFORE {}
-a::Before {}
-a::bEfOrE {}
-a::BEFORE {}
-
-// ✓ good
-a:before {}
-a::before {}
-input::-moz-placeholder {}
-```
-- 设置为"selector-pseudo-element-case": ["upper"]时：使用大写
-
-``` css
-// ✗ bad
-a:Before {}
-a:bEfOrE {}
-a:BEFORE {}
-a::Before {}
-a::bEfOrE {}
-a::before {}
-input::-moz-placeholder {}
-
-// ✓ good
-a:BEFORE {}
-a::BEFORE {}
-input::-MOZ-PLACEHOLDER {}
-```
-#### selector-pseudo-element-colon-notation
+#### 伪元素使用两个冒号
 [selector-pseudo-element-colon-notation](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-pseudo-element-colon-notation/README.md)
 
-规定伪元素冒号个数
-- 设置为"selector-pseudo-element-colon-notation": ["single"]时：使用一个冒号
-
-``` css
-// ✗ bad
-a::before { color: pink; }
-a::after { color: pink; }
-a::first-letter { color: pink; }
-a::first-line { color: pink; }
-
-// ✓ good
-a:before { color: pink; }
-a:after { color: pink; }
-a:first-letter { color: pink; }
-a:first-line { color: pink; }
-input::placeholder { color: pink; }
-li::marker { font-variant-numeric: tabular-nums; }
-```
-- 设置为"selector-pseudo-element-colon-notation": ["double"]时：使用两个冒号
-
 ``` css
 // ✗ bad
 a:before { color: pink; }
-a:after { color: pink; }
-a:first-letter { color: pink; }
-a:first-line { color: pink; }
-input::placeholder { color: pink; }
-li::marker { font-variant-numeric: tabular-nums; }
 
 // ✓ good
 a::before { color: pink; }
-a::after { color: pink; }
-a::first-letter { color: pink; }
-a::first-line { color: pink; }
 ```
-#### selector-type-case
-[selector-type-case](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-type-case/README.md)
 
-规定元素大小写
-- 设置为"selector-type-case": ["lower"]时：使用小写
 
-``` css
-// ✗ bad
-A {}
-LI {}
 
-// ✓ good
-a {}
-li {}
-```
-- 设置为"selector-type-case": ["upper"]时：使用大写
-
-``` css
-// ✗ bad
-a {}
-li {}
-
-// ✓ good
-A {}
-LI {}
-
-```
-#### selector-list-comma-newline-after
-[selector-list-comma-newline-after](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-list-comma-newline-after/README.md)
-
-规定伪元素大小写
-- 设置为"selector-list-comma-newline-after": ["always"]时：逗号后需要空行
-
-``` css
-// ✗ bad
-a, b { color: pink; }
-
-a
-, b { color: pink; }
-
-// ✓ good
-a,
-b { color: pink; }
-
-a
-,
-b { color: pink; }
-```
-- 设置为"selector-list-comma-newline-after": ["always-multi-line"]时：多行选择器逗号后需要空行
-
-``` css
-// ✗ bad
-a
-, b { color: pink; }
-
-// ✓ good
-a, b { color: pink; }
-
-a,
-b { color: pink; }
-
-a
-,
-b { color: pink; }
-
-```
-- 设置为"selector-list-comma-newline-after": ["never-multi-line"]时：多行选择器逗号后不允许空白符
-
-``` css
-// ✗ bad
-a
-, b { color: pink; }
-
-a,
-b { color: pink; }
-
-// ✓ good
-a,b { color: pink; }
-
-a
-,b { color: pink; }
-
-```
 
 ## 参考
 
