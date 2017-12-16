@@ -24,8 +24,7 @@
 
 ### HTML格式
 #### 要求标签结尾与自闭合 🔧
-[html-end-tags](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-end-tags.md)
-[html-self-closing](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-self-closing.md)
+[html-end-tags](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-end-tags.md), [html-self-closing](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-self-closing.md)
 
 #### 要求HTML属性统一使用双引号
 [html-quotes](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-quotes.md)
@@ -83,19 +82,7 @@
 ```
 
 #### 要求`v-bind`、`v-if`、`v-else-if`、`v-for`、`v-model`等指令必须书写正确
-[valid-v-bind](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-bind.md)
-[valid-v-cloak](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-cloak.md)
-[valid-v-if](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-if.md)
-[valid-v-else-if](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-else-if.md)
-[valid-v-else](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-else.md)
-[valid-v-for](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-for.md)
-[valid-v-html](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-html.md)
-[valid-v-model](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-model.md)
-[valid-v-on](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-on.md)
-[valid-v-once](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-once.md)
-[valid-v-pre](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-pre.md)
-[valid-v-show](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-show.md)
-[valid-v-text](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-text.md)
+[valid-v-bind](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-bind.md), [valid-v-cloak](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-cloak.md), [valid-v-if](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-if.md), [valid-v-else-if](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-else-if.md), [valid-v-else](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-else.md), [valid-v-for](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-for.md), [valid-v-html](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-html.md), [valid-v-model](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-model.md), [valid-v-on](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-on.md), [valid-v-once](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-once.md), [valid-v-pre](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-pre.md), [valid-v-show](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-show.md), [valid-v-text](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-v-text.md)
 
 ``` html
 // ✗ bad
@@ -107,57 +94,6 @@
 <div v-bind="{ id: someProp, 'other-attr': otherProp }"></div>
 <div v-bind:text-content.prop="text"></div>
 <my-component :prop="someThing"></my-component>
-```
-
-``` html
-// ✗ bad
-<div v-if></div>
-<div v-else-if:aaa="foo"></div>
-<div v-else.bbb="foo"></div>
-<div v-if="foo" v-else></div>
-<div v-if="foo" v-else-if="bar"></div>
-
-// ✓ good
-<div v-if="foo"></div>
-<div v-else-if="bar"></div>
-<div v-else></div>
-```
-
-``` html
-// ✗ bad
-<div v-for></div>
-<div v-for:aaa="x in list"></div>
-<div v-for.bbb="x in list"></div>
-<your-component v-for="x in list"></your-component>
-<div is="your-component" v-for="x in list"></div>
-<your-component  v-for="x in list" :key="foo"></your-component>
-
-// ✓ good
-<div v-for="x in list"></div>
-<your-component v-for="x in list" :key="x.id"></your-component>
-<div is="your-component" v-for="x in list" :key="x.id"></div>
-```
-
-``` html
-// ✗ bad
-<input v-model>
-    <input v-model:aaa="foo">
-    <input v-model.bbb="foo">
-    <input v-model="foo + bar">
-    <div v-model="foo"></div>
-    <div v-for="x in list">
-        <input v-model="x">
-    </div>
-</div>
-
-// ✓ good
-<input v-model="foo">
-<input v-model.lazy="foo">
-<textarea v-model="foo"></textarea>
-<your-component v-model="foo"></your-component>
-<div v-for="x in list">
-    <input v-model="x.name">
-</div>
 ```
 
 ### 模板中的脚本
@@ -185,13 +121,6 @@
 
 #### 要求`<template>`必须有正确的根元素
 [valid-template-root](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/valid-template-root.md)
-
-`<template>`中警告以下五种错误
-- 无根元素. E.g. `<template></template>`.
-- 根元素是文本. E.g. `<template>hello</template>`.
-- 多个根元素. E.g. `<template><div>one</div><div>two</div></template>`.
-- 根元素含有`v-for`指令. E.g. `<template><div v-for="x in list">{{x}}</div></template>`.
-- 根元素是`<template>` 或者 `<slot>`. E.g. `<template><template>hello</template></template>`.
 
 ``` html
 // ✗ bad
@@ -254,7 +183,7 @@
 #### 要求组件名始终用连字符 🔧
 [name-property-casing](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/name-property-casing.md)
 
-#### 禁止出现重复的字段。
+#### 禁止出现重复的字段
 [no-dupe-keys](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-dupe-keys.md)
 
 ``` javascript
