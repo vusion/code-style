@@ -11,11 +11,13 @@ module.exports = {
     },
     plugins: ['vue'],
     rules: {
-        'vue/no-unused-vars': [1],
-        'vue/html-indent': [2, 4, {
+        'vue/html-indent': [0, 4, {
             attribute: 1,
             closeBracket: 0,
         }],
+        'vue/no-unused-vars': [1],
+        'vue/require-v-for-key': [1],
+        'vue/no-confusing-v-for-v-if': [1],
         'vue/name-property-casing': [2, 'kebab-case'],
         'vue/html-self-closing': [2, {
             html: { void: 'never', normal: 'never', component: 'never' },
