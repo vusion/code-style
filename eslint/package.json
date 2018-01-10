@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-vusion",
   "description": "Sharable eslint config for Vusion",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "Rainfore <rainforest92@126.com>",
   "repository": "vusion/eslint-config",
   "bugs": {
