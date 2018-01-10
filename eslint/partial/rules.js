@@ -53,7 +53,7 @@ module.exports = {
         // @unnessesary: 'class-methods-use-this',
         // @useless: 'complexity'
         // @TODO: 'consistent-return': [2, { treatUndefinedAsUnspecified: true }],
-        curly: [2, 'multi-or-nest'],
+        curly: [0, 'multi-or-nest'],
         // @unnessesary: 'default-case': [0],
         'dot-location': [2, 'property'],
         'dot-notation': [1, { allowKeywords: true }],

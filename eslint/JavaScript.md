@@ -397,7 +397,7 @@ function func() { return true; }
 if (foo) { bar(); }
 ```
 
-#### 要求遵循大括号约定：`multi-or-nest`方式，多行时使用大括号，单行时省略大括号。🔧
+#### 推荐遵循大括号约定：`multi-or-nest`方式，多行时使用大括号，单行时省略大括号。🔧
 [curly](http://eslint.cn/docs/rules/curly)
 
 ``` javascript
@@ -1258,7 +1258,7 @@ if (Object.is(x, -0)) { /* ... */ }
 ```
 
 ## 函数和箭头函数
-#### 要求使用函数表达式，而不是函数声明。
+#### 推荐使用函数表达式，而不是函数声明。
 [func-style](http://eslint.cn/docs/rules/func-style), [no-inner-declarations](http://eslint.cn/docs/rules/no-inner-declarations), [no-func-assign](http://eslint.cn/docs/rules/no-func-assign)
 
 > 函数声明很容易被提升到当前作用域的顶部，这意味着可以把调用它的语句放在函数声明之前。
