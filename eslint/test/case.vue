@@ -1,5 +1,5 @@
 <template>
-    <article :class="$style.root">
+    <article v-if="abc" :class="$style.root" disabled style="width: 100%" @click="test">
         <slot></slot>
         <div v-if="foo"></div>
     </article>
@@ -9,7 +9,16 @@
 export default {
     name: 'u-article',
     methods: {
-        test() {
+        test(e) {
+            switch (e) {
+                case 'abc':
+                    break;
+                case 'ddd':
+                    break;
+                default:
+                    return 1;
+            }
+
             return 0;
         },
     },

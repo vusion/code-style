@@ -1,6 +1,6 @@
 # Vue Style
 
-该配置使用recommend规则，以及部分其他规则。
+该配置使用 recommend 规则，然后定制了部分规则。
 
 ## 目录
 - [模板](#模板)
@@ -19,14 +19,20 @@
 #### 禁止模板中出现多个空格 🔧
 [no-multi-spaces](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-multi-spaces.md)
 
-#### 强制mustache使用左右始终有一个空格 🔧
+#### 强制 mustache 使用左右始终有一个空格 🔧
 [mustache-interpolation-spacing](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/mustache-interpolation-spacing.md)
 
+#### 要求标签边缘不能有空格，自闭合斜杠前要有空格 🔧
+[html-closing-bracket-spacing](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-closing-bracket-spacing.md)
+
 ### HTML格式
-#### 要求标签结尾与自闭合 🔧
+#### 要求标签结尾括号始终不换行 🔧
+[vue/html-closing-bracket-newline](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-closing-bracket-newline.md)
+
+#### 要求有正确的标签结尾，只有 svg 和 math 标签使用自闭合 🔧
 [html-end-tags](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-end-tags.md), [html-self-closing](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-self-closing.md)
 
-#### 要求HTML属性统一使用双引号
+#### 要求 HTML 属性统一使用双引号
 [html-quotes](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-quotes.md)
 
 #### 要求模板中的属性使用连字符 🔧
@@ -166,7 +172,7 @@
 #### 禁止在`<template>`上出现`key`
 [no-template-key](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-template-key.md)
 
-#### 要求`<component>`的`is`必须用v-bind
+#### 要求`<component>`的`is`必须用`v-bind`
 [require-component-is](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-component-is.md)
 
 ``` html
@@ -225,8 +231,19 @@ export default {
 #### 推荐使用一致的组件对象顺序
 [order-in-components](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/order-in-components.md)
 
+### 属性
+#### 要求属性必须要有类型
+[require-prop-types](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-prop-types.md)
+
+#### 不要求属性必须有默认值
+[vue/require-default-prop](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-default-prop.md)
+
+#### 要求属性的默认值必须正确
+[require-valid-default-prop](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-valid-default-prop.md)
+
+
 ### 计算属性
-#### 要求计算属性必须有return
+#### 要求计算属性必须有 return
 [return-in-computed-property](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/return-in-computed-property.md)
 
 ``` javascript
@@ -279,11 +296,11 @@ computed: {
 }
 ```
 
-#### 禁止在计算属性中使用异步方法。
+#### 禁止在计算属性中使用异步方法
 [no-async-in-computed-properties](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-async-in-computed-properties.md)
 
 ### 其它
-#### 禁止出现Vue的保留字
+#### 禁止出现 Vue 的保留字
 [no-reserved-keys](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-reserved-keys.md)
 
 ``` javascript
@@ -306,10 +323,7 @@ export default {
 };
 ```
 
-#### 要求属性的默认值必须正确
-[require-valid-default-prop](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-valid-default-prop.md)
-
-#### 强制组件的data为一个函数
+#### 强制组件的 data 为一个函数
 [no-shared-component-data](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-shared-component-data.md)
 
 ``` javascript
@@ -330,7 +344,7 @@ export default {
 };
 ```
 
-#### 要求render函数必须要有返回值
+#### 要求 render 函数必须要有返回值
 [require-render-return](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-render-return.md)
 
 ## 参考

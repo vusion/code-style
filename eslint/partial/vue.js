@@ -11,9 +11,12 @@ module.exports = {
     },
     plugins: ['vue'],
     rules: {
-        'vue/html-indent': [0, 4, {
+        'vue/html-indent': [2, 4, {
             attribute: 1,
             closeBracket: 0,
+        }],
+        'vue/script-indent': [2, 4, {
+            switchCase: 1,
         }],
         'vue/no-unused-vars': [1],
         'vue/require-v-for-key': [1],
@@ -27,5 +30,19 @@ module.exports = {
         'vue/max-attributes-per-line': [0],
         'vue/require-default-prop': [0],
         'vue/order-in-components': [1],
+        'vue/html-closing-bracket-newline': [2],
+        'vue/html-closing-bracket-spacing': [2],
+        'vue/attributes-order': [0, { order: [
+            'DEFINITION',
+            'LIST_RENDERING',
+            'CONDITIONALS',
+            'RENDER_MODIFIERS',
+            'GLOBAL',
+            'UNIQUE',
+            'BINDING',
+            'OTHER_ATTR',
+            'EVENTS',
+            'CONTENT',
+        ] }],
     },
 };
