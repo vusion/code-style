@@ -1,20 +1,20 @@
 # CSS Code Style
 ## 配置
-使用[stylelint](https://github.com/stylelint/stylelint)
+
+使用 [stylelint](https://github.com/stylelint/stylelint)
 
 创建`.stylelintrc`文件，内容如下：
 
 ``` json
 {
-  "extends": "stylelint-config-recommended"
+  "extends": "vusion"
 }
 
 ```
-该配置使用stylelint-config-recommended规则。
 
 ## VSCode
 
-使用插件[vscode-stylelint](https://github.com/shinnn/vscode-stylelint/)
+使用插件 [vscode-stylelint](https://github.com/shinnn/vscode-stylelint/)
 
 ``` json
     // stylelint配置
@@ -384,7 +384,7 @@ a
 a { color: pink; }
 ```
 #### 禁止属性选择器中的空格
-[selector-attribute-brackets-space-inside](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-brackets-space-inside/README.md), [selector-attribute-operator-space-after](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-operator-space-after/README.md), [selector-attribute-operator-space-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-operator-space-before/README.md) 
+[selector-attribute-brackets-space-inside](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-brackets-space-inside/README.md), [selector-attribute-operator-space-after](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-operator-space-after/README.md), [selector-attribute-operator-space-before](https://github.com/stylelint/stylelint/blob/master/lib/rules/selector-attribute-operator-space-before/README.md)
 
 ``` css
 // ✗ bad

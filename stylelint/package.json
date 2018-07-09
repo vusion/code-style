@@ -6,9 +6,16 @@
     "test": "stylelint ./test/*.css --fix"
   },
   "license": "MIT",
-  "devDependencies": {
-    "stylelint": "^8.2.0",
+  "dependencies": {
     "stylelint-config-recommended": "^1.0.0",
     "stylelint-processor-html": "^1.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^9.3.0"
+  },
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "eslint-config-vusion": "^2.1.1",
+    "stylelint": "^9.3.0"
   }
 }

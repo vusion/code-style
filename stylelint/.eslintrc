@@ -1,0 +1,6 @@
+{
+    "extends": "vusion/all",
+    "env": {
+        "commonjs": true
+    }
+}

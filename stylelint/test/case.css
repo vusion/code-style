@@ -1,4 +1,92 @@
-a {
-    color:#fff;
-    color: red;
+@import 'proto-ui.vusion/src/u-button.vue/module.css';
+
+.root {
+    border-color: #cdcdcd;
+    color: #333;
+    padding: 0 30px;
+}
+
+.root:active {
+    background-color: white;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.root[disabled] {
+    color: #ccc;
+    border-color: #ddd;
+    box-shadow: none;
+}
+
+/**
+ * Color extends
+ */
+
+.root[color="primary"] {
+    background: $brand-primary;
+    color: white;
+    border: none;
+    line-height: 34px;
+}
+
+.root[color="primary"]:hover {
+    background: #5b96d9;
+}
+
+.root[color="primary"][disabled] {
+    background: #d9d9d9;
+}
+
+/**
+ * Size extends
+ */
+
+.root[size="small"] {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+}
+
+.root[square] {
+    width: $height-base;
+    padding: 0;
+}
+
+/**
+ * Icon extends
+ */
+
+.root[icon="create"]::before {
+    background: url('../u-icon.vue/icons/create.svg');
+    vertical-align: -2px;
+    margin-right: 8px;
+}
+
+.root[square][icon="refresh"]::before {
+    background: url('../u-icon.vue/icons/refresh.svg');
+    vertical-align: -2px;
+    color: #9ba4ad;
+}
+
+.root[square][icon="refresh"]:hover::before {
+    color: $brand-primary;
+}
+
+.root[icon="loading"]::before {
+    content: '';
+    display: inline-block;
+    vertical-align: -4px;
+    margin-left: -2px;
+    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 100%;
+    animation: rotate 1s ease-in-out 0s infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0); }
+    80% { transform: rotate(360deg); }
+    100% { transform: rotate(360deg); }
 }

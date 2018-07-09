@@ -7,7 +7,7 @@ npm install --save-dev eslint eslint-config-vusion
 
 然后创建`.eslintrc`文件：
 
-### 仅配置JS
+### 仅配置 JS
 
 ``` json
 {
@@ -19,7 +19,7 @@ npm install --save-dev eslint eslint-config-vusion
 }
 ```
 
-### 额外增加Vue的配置
+### 额外增加 Vue 的配置
 
 ``` json
 {
@@ -30,7 +30,7 @@ npm install --save-dev eslint eslint-config-vusion
 }
 ```
 
-### 包含测试和Vue的环境
+### 包含测试和 Vue 的环境
 
 ``` json
 {
@@ -45,7 +45,7 @@ npm install --save-dev eslint eslint-config-vusion
 
 ### VSCode
 
-如果要使用Vue相关的配置，需要配以下内容：
+如果要使用 Vue 相关的配置，需要配以下内容：
 
 ```json
 "eslint.enable": true,

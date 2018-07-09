@@ -9,7 +9,7 @@
 - 避免行尾有空格
 - 文件结束必须有空行
 
-## Windows的Git配置！
+## Windows 的 Git 配置！
 
 检出时最好不要转换回车换行：
 
@@ -38,7 +38,7 @@ git config --global core.autocrlf input
 
 ### Atom
 
-在Preferences中设置`Tab Length`为4，其他设置在Whitespace包中已默认配好。
+在 Preferences 中设置`Tab Length`为4，其他设置在 Whitespace 包中已默认配好。
 
 ### Sublime
 
