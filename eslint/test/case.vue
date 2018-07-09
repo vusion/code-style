@@ -1,8 +1,8 @@
 <template>
-    <article v-if="abc" :class="$style.root" disabled style="width: 100%" @click="test">
-        <slot></slot>
-        <div v-if="foo"></div>
-    </article>
+<article v-if="abc" :class="$style.root" disabled style="width: 100%" @click="test">
+    <slot></slot>
+    <div v-if="foo"></div>
+</article>
 </template>
 
 <script>

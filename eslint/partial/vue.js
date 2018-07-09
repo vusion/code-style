@@ -11,7 +11,7 @@ module.exports = {
     },
     plugins: ['vue'],
     rules: {
-        'vue/html-indent': [2, 4, {
+        'vue/html-indent': [0, 4, {
             attribute: 1,
             closeBracket: 0,
         }],

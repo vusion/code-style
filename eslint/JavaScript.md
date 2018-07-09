@@ -1,4 +1,4 @@
-# Vusion JavaScript 代码风格
+# Vusion JavaScript Style
 
 ## 目录
 - [空白](#空白)
