@@ -229,7 +229,7 @@ export default {
 #### 要求计算属性必须有return
 [return-in-computed-property](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/return-in-computed-property.md)
 
-``` html
+``` javascript
 // ✗ bad
 export default {
     computed: {

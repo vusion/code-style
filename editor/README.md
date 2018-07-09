@@ -24,6 +24,13 @@ git config --global core.autocrlf input
 {
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
+    "eslint.enable": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        { "language": "vue", "autoFix": true }
+    ],
 }
 ```
 
