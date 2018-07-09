@@ -25,7 +25,7 @@
 > - 🔧表示ESLint可以自动修复。
 
 ## 空白
-#### 要求使用4个空格作为缩进，禁止使用Tab。🔧
+#### 要求使用4个空格作为缩进，禁止使用 Tab。🔧
 [indent](http://eslint.cn/docs/rules/indent), [no-tabs](http://eslint.cn/docs/rules/no-tabs), [no-mixed-spaces-and-tabs](http://eslint.cn/docs/rules/no-mixed-spaces-and-tabs)
 
 ``` javascript
@@ -45,10 +45,10 @@ function () {
 }
 ```
 
-#### 强制使用Unix换行符`\n`，禁止使用Windows换行符`\r\n`🔧
+#### 强制使用 Unix 换行符`\n`，禁止使用 Windows 换行符`\r\n`。🔧
 [linebreak-style](http://eslint.cn/docs/rules/linebreak-style)
 
-#### 禁止使用Unicode字节顺序标记（BOM）。🔧
+#### 禁止使用 Unicode 字节顺序标记（BOM）。🔧
 [unicode-bom](http://eslint.cn/docs/rules/unicode-bom)
 
 #### 要求文件末尾有且只有一个空行。🔧
@@ -174,7 +174,7 @@ switch (num) {
 }
 ```
 
-#### 禁止点号（属性、rest参数、扩展运算符）和单词之间有空格。🔧
+#### 禁止点号（属性、rest 参数、扩展运算符）和单词之间有空格。🔧
 [no-whitespace-before-property](http://eslint.cn/docs/rules/no-whitespace-before-property), [rest-spread-spacing](http://eslint.cn/docs/rules/rest-spread-spacing)
 
 ``` javascript
@@ -351,7 +351,7 @@ const foo = () => { /* noop */ };
 ```
 
 ## 块
-#### 要求大括号风格使用：`1tbs`(one true brace style)格式，允许单行模式。🔧
+#### 要求大括号风格使用：`1tbs`(one true brace style) 格式，允许单行模式。🔧
 [brace-style](http://eslint.cn/docs/rules/brace-style)
 
 ``` javascript
@@ -777,7 +777,7 @@ if (true === true)
 if (foo === null)
 ```
 
-#### 禁止出现Yoda条件，除非是在范围中使用。🔧
+#### 禁止出现 Yoda 条件，除非是在范围中使用。🔧
 [yoda](http://eslint.cn/docs/rules/yoda)
 
 ``` javascript
@@ -1136,7 +1136,7 @@ const HTTPRequests = [
 
 
 ## 类型
-#### 禁止对`String`、`Number`、`Boolean`、`Symbol`、`Array`、`Object`、`Function`使用new操作符。
+#### 禁止对`String`、`Number`、`Boolean`、`Symbol`、`Array`、`Object`、`Function`使用 new 操作符。
 [no-new-wrappers](http://eslint.cn/docs/rules/no-new-wrappers), [no-new-symbol](http://eslint.cn/docs/rules/no-new-symbol), [no-array-constructor](http://eslint.cn/docs/rules/no-array-constructor), [no-new-object](http://eslint.cn/docs/rules/no-new-object), [no-new-func](http://eslint.cn/docs/rules/no-new-func)
 
 ``` javascript
@@ -1791,7 +1791,7 @@ let math = Math();
 const json = JSON();
 ```
 
-#### 禁止出现重复的函数参数、对象属性、类成员方法、case标签以及imports。
+#### 禁止出现重复的函数参数、对象属性、类成员方法、case 标签以及 imports。
 [no-dupe-args](http://eslint.cn/docs/rules/no-dupe-args), [no-dupe-keys](http://eslint.cn/docs/rules/no-dupe-keys), [no-dupe-class-members](http://eslint.cn/docs/rules/no-dupe-class-members), [no-duplicate-case](http://eslint.cn/docs/rules/no-duplicate-case), [no-duplicate-imports](http://eslint.cn/docs/rules/no-duplicate-imports)
 
 ``` javascript
