@@ -6,7 +6,9 @@
     "test": "stylelint ./test/*.css --fix"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "stylelint-processor-arbitrary-tags": "^0.1.0"
+  },
   "peerDependencies": {
     "stylelint": "^9.3.0"
   },

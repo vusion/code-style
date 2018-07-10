@@ -12,7 +12,7 @@ npm install --save-dev stylelint stylelint-config-vusion
 
 ``` json
 {
-  "extends": "vusion"
+  "extends": "stylelint-config-vusion"
 }
 ```
 

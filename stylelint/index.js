@@ -1,6 +1,5 @@
 module.exports = {
-    extends: 'stylelint-config-recommended',
-    // 'processors': ['stylelint-processor-html'],
+    processors: ['stylelint-processor-arbitrary-tags'],
     rules: {
         // Possible errors
         'color-no-invalid-hex': true,
@@ -10,7 +9,9 @@ module.exports = {
         'function-linear-gradient-no-nonstandard-direction': true,
         'string-no-newline': true,
         'unit-no-unknown': true,
-        'property-no-unknown': true,
+        'property-no-unknown': [true, {
+            ignoreProperties: ['composes', 'icon-font'],
+        }],
         'keyframe-declaration-no-important': true,
         'declaration-block-no-duplicate-properties': true,
         'declaration-block-no-shorthand-property-overrides': true,
@@ -21,7 +22,9 @@ module.exports = {
         'media-feature-name-no-unknown': true,
         'at-rule-no-unknown': true,
         'comment-no-empty': true,
-        'no-descending-specificity': true,
+        'no-descending-specificity': [true, {
+            severity: 'warning',
+        }],
         'no-duplicate-at-import-rules': true,
         'no-duplicate-selectors': true,
         'no-empty-source': true,
@@ -115,14 +118,14 @@ module.exports = {
         'value-list-comma-space-after': ['always-single-line'],
         'value-list-comma-space-before': ['never'],
         'value-list-max-empty-lines': [0],
-        'custom-property-empty-line-before': ['never'],
+        // 'custom-property-empty-line-before': ['never'],
         'property-case': ['lower'],
         'declaration-bang-space-after': ['never'],
         'declaration-bang-space-before': ['always'],
         'declaration-colon-newline-after': ['always-multi-line'],
         'declaration-colon-space-after': ['always-single-line'],
         'declaration-colon-space-before': ['never'],
-        'declaration-empty-line-before': ['never'],
+        // 'declaration-empty-line-before': ['never'],
         'declaration-block-semicolon-newline-after': ['always-multi-line'],
         'declaration-block-semicolon-newline-before': ['never-multi-line'],
         'declaration-block-semicolon-space-after': ['always-single-line'],
@@ -153,9 +156,9 @@ module.exports = {
         'selector-list-comma-newline-before': ['never-multi-line'],
         'selector-list-comma-space-after': ['always-single-line'],
         'selector-list-comma-space-before': ['never'],
-        'rule-empty-line-before': ['always-multi-line', {
-            except: ['first-nested'],
-        }],
+        // 'rule-empty-line-before': ['always-multi-line', {
+        //     except: ['first-nested', 'after-rule'],
+        // }],
         'media-feature-colon-space-after': ['always'],
         'media-feature-colon-space-before': ['never'],
         'media-feature-name-case': ['lower'],
@@ -167,7 +170,7 @@ module.exports = {
         'media-query-list-comma-space-after': ['always-single-line'],
         'media-query-list-comma-space-before': ['never'],
         'at-rule-empty-line-before': ['always', {
-            except: ['blockless-after-blockless', 'first-nested'],
+            except: ['blockless-after-blockless', 'first-nested', 'after-comment'],
         }],
         'at-rule-name-case': ['lower'],
         // @disagreed: 'at-rule-name-newline-after':
