@@ -1,15 +1,12 @@
 {
   "name": "stylelint-config-vusion",
   "description": "Sharable stylelint config for Vusion",
-  "version": "1.2.3",
+  "version": "1.0.0",
   "scripts": {
     "test": "stylelint ./test/*.css --fix"
   },
   "license": "MIT",
-  "dependencies": {
-    "stylelint-config-recommended": "^1.0.0",
-    "stylelint-processor-html": "^1.0.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "stylelint": "^9.3.0"
   },

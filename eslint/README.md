@@ -1,6 +1,7 @@
 # Vusion ESLint Config
 
 ## 配置
+
 ``` shell
 npm install --save-dev eslint eslint-config-vusion
 ```
