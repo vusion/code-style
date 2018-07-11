@@ -9,10 +9,9 @@
 export default {
     name: 'u-article',
     methods: {
-        test: function() {
+        test() {
             return 0;
         },
-
     },
 };
 </script>

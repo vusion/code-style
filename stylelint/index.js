@@ -1,5 +1,5 @@
 module.exports = {
-    processors: ['stylelint-processor-arbitrary-tags'],
+    // processors: ['stylelint-processor-arbitrary-tags'],
     rules: {
         // Possible errors
         'color-no-invalid-hex': true,
@@ -27,7 +27,7 @@ module.exports = {
         }],
         'no-duplicate-at-import-rules': true,
         'no-duplicate-selectors': true,
-        'no-empty-source': true,
+        'no-empty-source': null,
         'no-extra-semicolons': true,
         'no-invalid-double-slash-comments': true,
 
