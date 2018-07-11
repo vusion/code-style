@@ -86,46 +86,46 @@ a {}
 [max-empty-lines](https://stylelint.io/user-guide/rules/max-empty-lines)
 
 #### 禁止出现空行？
-[custom-property-empty-line-before](https://stylelint.io/user-guide/rules/custom-property-empty-line-before)
-[function-max-empty-lines](https://stylelint.io/user-guide/rules/function-max-empty-lines)
-[value-list-max-empty-lines](https://stylelint.io/user-guide/rules/value-list-max-empty-lines)
-[declaration-empty-line-before](https://stylelint.io/user-guide/rules/declaration-empty-line-before)
-[rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before)
+[custom-property-empty-line-before](https://stylelint.io/user-guide/rules/custom-property-empty-line-before),
+[function-max-empty-lines](https://stylelint.io/user-guide/rules/function-max-empty-lines),
+[value-list-max-empty-lines](https://stylelint.io/user-guide/rules/value-list-max-empty-lines),
+[declaration-empty-line-before](https://stylelint.io/user-guide/rules/declaration-empty-line-before),
+[rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before),
 [at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before)
 
 #### 禁止行尾出现空格 🔧
 [no-eol-whitespace](https://stylelint.io/user-guide/rules/no-eol-whitespace)
 
 #### 要求分号、逗号、冒号之前没有空格，之后必须有一个空格，函数中的逗号除外 🔧
-[declaration-block-semicolon-newline-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-after)
-[declaration-block-semicolon-newline-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-before)
-[declaration-block-semicolon-space-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-after)
-[declaration-block-semicolon-space-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-before)
-[at-rule-semicolon-newline-after](https://stylelint.io/user-guide/rules/at-rule-semicolon-newline-after)
-[at-rule-semicolon-space-before](https://stylelint.io/user-guide/rules/at-rule-semicolon-space-before)
-[selector-list-comma-newline-after](https://stylelint.io/user-guide/rules/selector-list-comma-newline-after)
-[selector-list-comma-newline-before](https://stylelint.io/user-guide/rules/selector-list-comma-newline-before)
-[selector-list-comma-space-after](https://stylelint.io/user-guide/rules/selector-list-comma-space-after)
-[selector-list-comma-space-before](https://stylelint.io/user-guide/rules/selector-list-comma-space-before)
-[value-list-comma-newline-after](https://stylelint.io/user-guide/rules/value-list-comma-newline-after)
-[value-list-comma-newline-before](https://stylelint.io/user-guide/rules/value-list-comma-newline-before)
-[value-list-comma-space-after](https://stylelint.io/user-guide/rules/value-list-comma-space-after)
-[value-list-comma-space-before](https://stylelint.io/user-guide/rules/value-list-comma-space-before)
-[function-comma-newline-after](https://stylelint.io/user-guide/rules/function-comma-newline-after)
-[function-comma-newline-before](https://stylelint.io/user-guide/rules/function-comma-newline-before)
-[function-comma-space-after](https://stylelint.io/user-guide/rules/function-comma-space-after)
-[function-comma-space-before](https://stylelint.io/user-guide/rules/function-comma-space-before)
-[declaration-colon-newline-after](https://stylelint.io/user-guide/rules/declaration-colon-newline-after)
-[declaration-colon-space-after](https://stylelint.io/user-guide/rules/declaration-colon-space-after)
-[declaration-colon-space-before](https://stylelint.io/user-guide/rules/declaration-colon-space-before)
-[media-feature-colon-space-after](https://stylelint.io/user-guide/rules/media-feature-colon-space-after)
+[declaration-block-semicolon-newline-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-after),
+[declaration-block-semicolon-newline-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-before),
+[declaration-block-semicolon-space-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-after),
+[declaration-block-semicolon-space-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-before),
+[at-rule-semicolon-newline-after](https://stylelint.io/user-guide/rules/at-rule-semicolon-newline-after),
+[at-rule-semicolon-space-before](https://stylelint.io/user-guide/rules/at-rule-semicolon-space-before),
+[selector-list-comma-newline-after](https://stylelint.io/user-guide/rules/selector-list-comma-newline-after),
+[selector-list-comma-newline-before](https://stylelint.io/user-guide/rules/selector-list-comma-newline-before),
+[selector-list-comma-space-after](https://stylelint.io/user-guide/rules/selector-list-comma-space-after),
+[selector-list-comma-space-before](https://stylelint.io/user-guide/rules/selector-list-comma-space-before),
+[value-list-comma-newline-after](https://stylelint.io/user-guide/rules/value-list-comma-newline-after),
+[value-list-comma-newline-before](https://stylelint.io/user-guide/rules/value-list-comma-newline-before),
+[value-list-comma-space-after](https://stylelint.io/user-guide/rules/value-list-comma-space-after),
+[value-list-comma-space-before](https://stylelint.io/user-guide/rules/value-list-comma-space-before),
+[function-comma-newline-after](https://stylelint.io/user-guide/rules/function-comma-newline-after),
+[function-comma-newline-before](https://stylelint.io/user-guide/rules/function-comma-newline-before),
+[function-comma-space-after](https://stylelint.io/user-guide/rules/function-comma-space-after),
+[function-comma-space-before](https://stylelint.io/user-guide/rules/function-comma-space-before),
+[declaration-colon-newline-after](https://stylelint.io/user-guide/rules/declaration-colon-newline-after),
+[declaration-colon-space-after](https://stylelint.io/user-guide/rules/declaration-colon-space-after),
+[declaration-colon-space-before](https://stylelint.io/user-guide/rules/declaration-colon-space-before),
+[media-feature-colon-space-after](https://stylelint.io/user-guide/rules/media-feature-colon-space-after),
 [media-feature-colon-space-before](https://stylelint.io/user-guide/rules/media-feature-colon-space-before)
 
 #### 禁止在小括号（伪类选择器、函数、媒体查询）和中括号（属性选择器）内加空格，要求在大括号（块）内边缘加一个空格，括号之间加一个空格 🔧
-[selector-attribute-brackets-space-inside](https://stylelint.io/user-guide/rules/selector-attribute-brackets-space-inside)
-[selector-pseudo-class-parentheses-space-inside](https://stylelint.io/user-guide/rules/selector-pseudo-class-parentheses-space-inside)
-[function-parentheses-space-inside](https://stylelint.io/user-guide/rules/function-parentheses-space-inside)
-[media-feature-parentheses-space-inside](https://stylelint.io/user-guide/rules/media-feature-parentheses-space-inside)
+[selector-attribute-brackets-space-inside](https://stylelint.io/user-guide/rules/selector-attribute-brackets-space-inside),
+[selector-pseudo-class-parentheses-space-inside](https://stylelint.io/user-guide/rules/selector-pseudo-class-parentheses-space-inside),
+[function-parentheses-space-inside](https://stylelint.io/user-guide/rules/function-parentheses-space-inside),
+[media-feature-parentheses-space-inside](https://stylelint.io/user-guide/rules/media-feature-parentheses-space-inside),
 [function-whitespace-after](https://stylelint.io/user-guide/rules/function-whitespace-after)
 
 ``` css
@@ -143,14 +143,14 @@ input:not([type="submit"]) {}
 
 #### 要求块的大括号前必须要有空格
 
-[block-closing-brace-empty-line-before](https://stylelint.io/user-guide/rules/block-closing-brace-empty-line-before)
-[block-closing-brace-newline-after](https://stylelint.io/user-guide/rules/block-closing-brace-newline-after)
-[block-closing-brace-newline-before](https://stylelint.io/user-guide/rules/block-closing-brace-newline-before)
-[block-closing-brace-space-after](https://stylelint.io/user-guide/rules/block-closing-brace-space-after)
-[block-closing-brace-space-before](https://stylelint.io/user-guide/rules/block-closing-brace-space-before)
-[block-opening-brace-newline-after](https://stylelint.io/user-guide/rules/block-opening-brace-newline-after)
-[block-opening-brace-newline-before](https://stylelint.io/user-guide/rules/block-opening-brace-newline-before)
-[block-opening-brace-space-after](https://stylelint.io/user-guide/rules/block-opening-brace-space-after)
+[block-closing-brace-empty-line-before](https://stylelint.io/user-guide/rules/block-closing-brace-empty-line-before),
+[block-closing-brace-newline-after](https://stylelint.io/user-guide/rules/block-closing-brace-newline-after),
+[block-closing-brace-newline-before](https://stylelint.io/user-guide/rules/block-closing-brace-newline-before),
+[block-closing-brace-space-after](https://stylelint.io/user-guide/rules/block-closing-brace-space-after),
+[block-closing-brace-space-before](https://stylelint.io/user-guide/rules/block-closing-brace-space-before),
+[block-opening-brace-newline-after](https://stylelint.io/user-guide/rules/block-opening-brace-newline-after),
+[block-opening-brace-newline-before](https://stylelint.io/user-guide/rules/block-opening-brace-newline-before),
+[block-opening-brace-space-after](https://stylelint.io/user-guide/rules/block-opening-brace-space-after),
 [block-opening-brace-space-before](https://stylelint.io/user-guide/rules/block-opening-brace-space-before)
 
 ``` css
@@ -173,10 +173,10 @@ a { color: pink; }
 ```
 
 #### 属性操作符周围不加空格，计算函数、媒体查询等其它操作符要加空格
-[selector-attribute-operator-space-after](https://stylelint.io/user-guide/rules/selector-attribute-operator-space-after)
-[selector-attribute-operator-space-before](https://stylelint.io/user-guide/rules/selector-attribute-operator-space-before)
-[media-feature-range-operator-space-after](https://stylelint.io/user-guide/rules/media-feature-range-operator-space-after)
-[media-feature-range-operator-space-before](https://stylelint.io/user-guide/rules/media-feature-range-operator-space-before)
+[selector-attribute-operator-space-after](https://stylelint.io/user-guide/rules/selector-attribute-operator-space-after),
+[selector-attribute-operator-space-before](https://stylelint.io/user-guide/rules/selector-attribute-operator-space-before),
+[media-feature-range-operator-space-after](https://stylelint.io/user-guide/rules/media-feature-range-operator-space-after),
+[media-feature-range-operator-space-before](https://stylelint.io/user-guide/rules/media-feature-range-operator-space-before),
 [function-calc-no-unspaced-operator](https://stylelint.io/user-guide/rules/function-calc-no-unspaced-operator)
 
 ``` css
@@ -188,7 +188,9 @@ a { top: calc(1px + 2px); }
 ```
 
 #### 要求选择器之间必须有空格，但不能有多余的空格
-[selector-combinator-space-after](https://stylelint.io/user-guide/rules/selector-combinator-space-after), [selector-combinator-space-before](https://stylelint.io/user-guide/rules/selector-combinator-space-before), [selector-descendant-combinator-no-non-space](https://stylelint.io/user-guide/rules/selector-descendant-combinator-no-non-space)
+[selector-combinator-space-after](https://stylelint.io/user-guide/rules/selector-combinator-space-after),
+[selector-combinator-space-before](https://stylelint.io/user-guide/rules/selector-combinator-space-before),
+[selector-descendant-combinator-no-non-space](https://stylelint.io/user-guide/rules/selector-descendant-combinator-no-non-space)
 
 ``` css
 /* ✗ bad */
@@ -203,20 +205,20 @@ a> b { color: pink; }
 ```
 
 #### 要求`!`前必须加一个空格，后面不加
-[declaration-bang-space-after](https://stylelint.io/user-guide/rules/declaration-bang-space-after)
-[declaration-bang-space-before](https://stylelint.io/user-guide/rules/declaration-bang-space-before)
+[declaration-bang-space-after](https://stylelint.io/user-guide/rules/declaration-bang-space-after),
+[declaration-bang-space-before](https://stylelint.io/user-guide/rules/declaration-bang-space-before),
 
 ## 大小写
 #### 要求@规则，选择器的标签、伪类、伪元素，属性、关键值、单位、函数名、颜色值、媒体查询均小写 🔧
-[at-rule-name-case](https://stylelint.io/user-guide/rules/at-rule-name-case)
-[selector-type-case](https://stylelint.io/user-guide/rules/selector-type-case)
-[selector-pseudo-element-case](https://stylelint.io/user-guide/rules/selector-pseudo-element-case)
-[selector-pseudo-class-case](https://stylelint.io/user-guide/rules/selector-pseudo-class-case)
-[property-case](https://stylelint.io/user-guide/rules/property-case)
-[value-keyword-case](https://stylelint.io/user-guide/rules/value-keyword-case)
-[unit-case](https://stylelint.io/user-guide/rules/unit-case)
-[function-name-case](https://stylelint.io/user-guide/rules/function-name-case)
-[color-hex-case](https://stylelint.io/user-guide/rules/color-hex-case)
+[at-rule-name-case](https://stylelint.io/user-guide/rules/at-rule-name-case),
+[selector-type-case](https://stylelint.io/user-guide/rules/selector-type-case),
+[selector-pseudo-element-case](https://stylelint.io/user-guide/rules/selector-pseudo-element-case),
+[selector-pseudo-class-case](https://stylelint.io/user-guide/rules/selector-pseudo-class-case),
+[property-case](https://stylelint.io/user-guide/rules/property-case),
+[value-keyword-case](https://stylelint.io/user-guide/rules/value-keyword-case),
+[unit-case](https://stylelint.io/user-guide/rules/unit-case),
+[function-name-case](https://stylelint.io/user-guide/rules/function-name-case),
+[color-hex-case](https://stylelint.io/user-guide/rules/color-hex-case),
 [media-feature-name-case](https://stylelint.io/user-guide/rules/media-feature-name-case)
 
 ``` css
@@ -257,7 +259,7 @@ li::before {}
 
 ## 分号
 #### 块结尾也使用分号，禁止多余的分号
-[declaration-block-trailing-semicolon](https://stylelint.io/user-guide/rules/declaration-block-trailing-semicolon)
+[declaration-block-trailing-semicolon](https://stylelint.io/user-guide/rules/declaration-block-trailing-semicolon),
 [no-extra-semicolons](https://stylelint.io/user-guide/rules/no-extra-semicolons)
 
 ``` css
@@ -330,7 +332,7 @@ a {
 ```
 
 #### 尽量简写属性
-[declaration-block-no-redundant-longhand-properties](https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties)
+[declaration-block-no-redundant-longhand-properties](https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties),
 [shorthand-property-no-redundant-values](https://stylelint.io/user-guide/rules/shorthand-property-no-redundant-values)
 
 ``` css
@@ -374,7 +376,7 @@ a {
 
 ## 值
 #### 要求有前导0，禁止有尾随0
-[number-leading-zero](https://stylelint.io/user-guide/rules/number-leading-zero)
+[number-leading-zero](https://stylelint.io/user-guide/rules/number-leading-zero),
 [number-no-trailing-zeros](https://stylelint.io/user-guide/rules/number-no-trailing-zeros)
 
 #### 为0数字不带单位
@@ -384,7 +386,7 @@ a {
 [number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision)
 
 #### 颜色尽可能使用名称，尽可能使用缩写的十六进制
-[color-named](https://stylelint.io/user-guide/rules/color-named)
+[color-named](https://stylelint.io/user-guide/rules/color-named),
 [color-hex-length](https://stylelint.io/user-guide/rules/color-hex-length)
 
 #### `linear-gradient()`中的方向属性值必须符合标准语法
@@ -442,9 +444,9 @@ a {
 
 ## 低级错误
 #### 禁止出现重复的属性、选择器、@import、字体名
-[declaration-block-no-duplicate-properties](https://stylelint.io/user-guide/rules/declaration-block-no-duplicate-properties)
-[no-duplicate-selectors](https://stylelint.io/user-guide/rules/no-duplicate-selectors)
-[no-duplicate-at-import-rules](https://stylelint.io/user-guide/rules/no-duplicate-at-import-rules)
+[declaration-block-no-duplicate-properties](https://stylelint.io/user-guide/rules/declaration-block-no-duplicate-properties),
+[no-duplicate-selectors](https://stylelint.io/user-guide/rules/no-duplicate-selectors),
+[no-duplicate-at-import-rules](https://stylelint.io/user-guide/rules/no-duplicate-at-import-rules),
 [font-family-no-duplicate-names](https://stylelint.io/user-guide/rules/font-family-no-duplicate-names)
 
 ``` css
@@ -473,14 +475,14 @@ p {
 ```
 
 #### 禁止出现未知的@规则，选择器标签、伪类、伪元素，属性、单位、颜色值，媒体查询，动画
-[at-rule-no-unknown](https://stylelint.io/user-guide/rules/at-rule-no-unknown)
-[selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown)
-[selector-pseudo-element-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-element-no-unknown)
-[selector-type-no-unknown](https://stylelint.io/user-guide/rules/selector-type-no-unknown)
-[property-no-unknown](https://stylelint.io/user-guide/rules/property-no-unknown)
-[unit-no-unknown](https://stylelint.io/user-guide/rules/unit-no-unknown)
-[color-no-invalid-hex](https://stylelint.io/user-guide/rules/color-no-invalid-hex)
-[media-feature-name-no-unknown](https://stylelint.io/user-guide/rules/media-feature-name-no-unknown)
+[at-rule-no-unknown](https://stylelint.io/user-guide/rules/at-rule-no-unknown),
+[selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown),
+[selector-pseudo-element-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-element-no-unknown),
+[selector-type-no-unknown](https://stylelint.io/user-guide/rules/selector-type-no-unknown),
+[property-no-unknown](https://stylelint.io/user-guide/rules/property-no-unknown),
+[unit-no-unknown](https://stylelint.io/user-guide/rules/unit-no-unknown),
+[color-no-invalid-hex](https://stylelint.io/user-guide/rules/color-no-invalid-hex),
+[media-feature-name-no-unknown](https://stylelint.io/user-guide/rules/media-feature-name-no-unknown),
 [no-unknown-animations](https://stylelint.io/user-guide/rules/no-unknown-animations)
 
 ``` css

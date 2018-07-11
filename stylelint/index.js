@@ -170,7 +170,8 @@ module.exports = {
         'media-query-list-comma-space-after': ['always-single-line'],
         'media-query-list-comma-space-before': ['never'],
         'at-rule-empty-line-before': ['always', {
-            except: ['blockless-after-blockless', 'first-nested', 'after-comment'],
+            except: ['blockless-after-blockless', 'first-nested'],
+            ignore: ['after-comment'],
         }],
         'at-rule-name-case': ['lower'],
         // @disagreed: 'at-rule-name-newline-after':

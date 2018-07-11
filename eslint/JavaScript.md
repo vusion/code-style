@@ -25,7 +25,9 @@
 
 ## 空白
 #### 要求使用4个空格作为缩进，禁止使用 Tab。🔧
-[indent](http://eslint.cn/docs/rules/indent), [no-tabs](http://eslint.cn/docs/rules/no-tabs), [no-mixed-spaces-and-tabs](http://eslint.cn/docs/rules/no-mixed-spaces-and-tabs)
+[indent](http://eslint.cn/docs/rules/indent),
+[no-tabs](http://eslint.cn/docs/rules/no-tabs),
+[no-mixed-spaces-and-tabs](http://eslint.cn/docs/rules/no-mixed-spaces-and-tabs)
 
 ``` javascript
 // ✗ bad
@@ -149,7 +151,10 @@ a ? b: c;
 ```
 
 #### 要求分号、逗号、冒号之前没有空格，之后必须有一个空格。🔧
-[semi-spacing](http://eslint.cn/docs/rules/semi-spacing), [comma-spacing](http://eslint.cn/docs/rules/comma-spacing), [key-spacing](http://eslint.cn/docs/rules/key-spacing), [switch-colon-spacing](http://eslint.cn/docs/rules/switch-colon-spacing)
+[semi-spacing](http://eslint.cn/docs/rules/semi-spacing),
+[comma-spacing](http://eslint.cn/docs/rules/comma-spacing),
+[key-spacing](http://eslint.cn/docs/rules/key-spacing),
+[switch-colon-spacing](http://eslint.cn/docs/rules/switch-colon-spacing)
 
 ``` javascript
 // ✗ bad
@@ -174,7 +179,8 @@ switch (num) {
 ```
 
 #### 禁止点号（属性、rest 参数、扩展运算符）和单词之间有空格。🔧
-[no-whitespace-before-property](http://eslint.cn/docs/rules/no-whitespace-before-property), [rest-spread-spacing](http://eslint.cn/docs/rules/rest-spread-spacing)
+[no-whitespace-before-property](http://eslint.cn/docs/rules/no-whitespace-before-property),
+[rest-spread-spacing](http://eslint.cn/docs/rules/rest-spread-spacing)
 
 ``` javascript
 // ✗ bad
@@ -189,7 +195,9 @@ fn(...args);
 ```
 
 #### 要求一元运算符周围没有空格，等号、二元运算符、箭头符号周围有一个空格。🔧
-[space-unary-ops](http://eslint.cn/docs/rules/space-unary-ops), [space-infix-ops](http://eslint.cn/docs/rules/space-infix-ops), [arrow-spacing](http://eslint.cn/docs/rules/arrow-spacing)
+[space-unary-ops](http://eslint.cn/docs/rules/space-unary-ops),
+[space-infix-ops](http://eslint.cn/docs/rules/space-infix-ops),
+[arrow-spacing](http://eslint.cn/docs/rules/arrow-spacing)
 
 ``` javascript
 // ✗ bad
@@ -206,7 +214,11 @@ const func = (x) => {};
 ```
 
 #### 禁止在小括号（表达式、函数）和中括号（数组、属性）内边缘加空格，要求在大括号（对象、单行代码块）内边缘加一个空格。🔧
-[space-in-parens](http://eslint.cn/docs/rules/space-in-parens), [array-bracket-spacing](http://eslint.cn/docs/rules/array-bracket-spacing), [computed-property-spacing](http://eslint.cn/docs/rules/computed-property-spacing), [object-curly-spacing](http://eslint.cn/docs/rules/object-curly-spacing), [block-spacing](http://eslint.cn/docs/rules/block-spacing)
+[space-in-parens](http://eslint.cn/docs/rules/space-in-parens),
+[array-bracket-spacing](http://eslint.cn/docs/rules/array-bracket-spacing),
+[computed-property-spacing](http://eslint.cn/docs/rules/computed-property-spacing),
+[object-curly-spacing](http://eslint.cn/docs/rules/object-curly-spacing),
+[block-spacing](http://eslint.cn/docs/rules/block-spacing)
 
 ``` javascript
 // ✗ bad
@@ -287,7 +299,9 @@ dog.set('attr', {
 ```
 
 #### 要求在关键字和小括号之间加一个空格，禁止在函数名和参数列表之间加空格。🔧
-[keyword-spacing](http://eslint.cn/docs/rules/keyword-spacing), [func-call-spacing](http://eslint.cn/docs/rules/func-call-spacing), [space-before-function-paren](http://eslint.cn/docs/rules/space-before-function-paren)
+[keyword-spacing](http://eslint.cn/docs/rules/keyword-spacing),
+[func-call-spacing](http://eslint.cn/docs/rules/func-call-spacing),
+[space-before-function-paren](http://eslint.cn/docs/rules/space-before-function-paren)
 
 > 保持一致是最好的，你不需要在添加/删除函数名时，考虑要不要添加/删除空格。
 
@@ -324,7 +338,8 @@ run(function () {
 ```
 
 #### 禁止出现空块语句或空函数，除非添加一个注释。
-[no-empty](http://eslint.cn/docs/rules/no-empty), [no-empty-function](http://eslint.cn/docs/rules/no-empty-function)
+[no-empty](http://eslint.cn/docs/rules/no-empty),
+[no-empty-function](http://eslint.cn/docs/rules/no-empty-function)
 
 ``` javascript
 // ✗ bad
@@ -471,7 +486,10 @@ for (let i = 0; i < count; i++)
 
 ## 分号和逗号
 #### 强制使用分号，并且只在行尾使用，禁止多余的分号。🔧
-[semi](http://eslint.cn/docs/rules/semi), [semi-style](http://eslint.cn/docs/rules/semi-style), [no-extra-semi](http://eslint.cn/docs/rules/no-extra-semi), [no-unexpected-multiline](http://eslint.cn/docs/rules/no-unexpected-multiline)
+[semi](http://eslint.cn/docs/rules/semi),
+[semi-style](http://eslint.cn/docs/rules/semi-style),
+[no-extra-semi](http://eslint.cn/docs/rules/no-extra-semi),
+[no-unexpected-multiline](http://eslint.cn/docs/rules/no-unexpected-multiline)
 
 ``` javascript
 // ✗ bad
@@ -629,7 +647,8 @@ const message = `Hello
 ```
 
 #### 尽量使用模板字符串，禁止在模板字符串的大括号周围加空格。🔧
-[prefer-template](http://eslint.cn/docs/rules/prefer-template), [template-curly-spacing](http://eslint.cn/docs/rules/template-curly-spacing)
+[prefer-template](http://eslint.cn/docs/rules/prefer-template),
+[template-curly-spacing](http://eslint.cn/docs/rules/template-curly-spacing)
 
 ``` javascript
 // ✗ bad
@@ -884,7 +903,8 @@ const bazz = num > 1;
 ```
 
 #### 禁止多行和嵌套的三元表达式。
-[no-nested-ternary](http://eslint.cn/docs/rules/no-nested-ternary), [multiline-ternary](http://eslint.cn/docs/rules/multiline-ternary)
+[no-nested-ternary](http://eslint.cn/docs/rules/no-nested-ternary),
+[multiline-ternary](http://eslint.cn/docs/rules/multiline-ternary)
 
 > 会使代码难以理解，请使用`if`语句。
 
@@ -951,7 +971,9 @@ if (('' + !key) in object) {/* code */ }
 
 ## 变量和作用域
 #### 要求声明变量优先使用`const`，需要改变时使用`let`，禁止使用`var`或不声明变量。
-[no-undef](http://eslint.cn/docs/rules/no-undef), [prefer-const](http://eslint.cn/docs/rules/prefer-const), [no-var](http://eslint.cn/docs/rules/no-var)
+[no-undef](http://eslint.cn/docs/rules/no-undef),
+[prefer-const](http://eslint.cn/docs/rules/prefer-const),
+[no-var](http://eslint.cn/docs/rules/no-var)
 
 ``` javascript
 // ✗ bad
@@ -1004,7 +1026,8 @@ const baz = undefined;
 ```
 
 #### 禁止给`const`赋值，禁止重复声明。
-[no-const-assign](http://eslint.cn/docs/rules/no-const-assign), [no-redeclare](http://eslint.cn/docs/rules/no-redeclare)
+[no-const-assign](http://eslint.cn/docs/rules/no-const-assign),
+[no-redeclare](http://eslint.cn/docs/rules/no-redeclare)
 
 ``` javascript
 // ✗ bad
@@ -1136,7 +1159,11 @@ const HTTPRequests = [
 
 ## 类型
 #### 禁止对`String`、`Number`、`Boolean`、`Symbol`、`Array`、`Object`、`Function`使用 new 操作符。
-[no-new-wrappers](http://eslint.cn/docs/rules/no-new-wrappers), [no-new-symbol](http://eslint.cn/docs/rules/no-new-symbol), [no-array-constructor](http://eslint.cn/docs/rules/no-array-constructor), [no-new-object](http://eslint.cn/docs/rules/no-new-object), [no-new-func](http://eslint.cn/docs/rules/no-new-func)
+[no-new-wrappers](http://eslint.cn/docs/rules/no-new-wrappers),
+[no-new-symbol](http://eslint.cn/docs/rules/no-new-symbol),
+[no-array-constructor](http://eslint.cn/docs/rules/no-array-constructor),
+[no-new-object](http://eslint.cn/docs/rules/no-new-object),
+[no-new-func](http://eslint.cn/docs/rules/no-new-func)
 
 ``` javascript
 // ✗ bad
@@ -1258,7 +1285,9 @@ if (Object.is(x, -0)) { /* ... */ }
 
 ## 函数和箭头函数
 #### 要求使用函数表达式，而不是函数声明。
-[func-style](http://eslint.cn/docs/rules/func-style), [no-inner-declarations](http://eslint.cn/docs/rules/no-inner-declarations), [no-func-assign](http://eslint.cn/docs/rules/no-func-assign)
+[func-style](http://eslint.cn/docs/rules/func-style),
+[no-inner-declarations](http://eslint.cn/docs/rules/no-inner-declarations),
+[no-func-assign](http://eslint.cn/docs/rules/no-func-assign)
 
 > 函数声明很容易被提升到当前作用域的顶部，这意味着可以把调用它的语句放在函数声明之前。
 
@@ -1673,7 +1702,8 @@ class Rey extends Jedi {
 ```
 
 #### 要求在构造函数中有`super()`调用，禁止在调用`super()`之前使用`this`。
-[constructor-super](http://eslint.cn/docs/rules/constructor-super), [no-this-before-super](http://eslint.cn/docs/rules/no-this-before-super)
+[constructor-super](http://eslint.cn/docs/rules/constructor-super),
+[no-this-before-super](http://eslint.cn/docs/rules/no-this-before-super)
 
 ``` javascript
 // ✗ bad
@@ -1747,7 +1777,8 @@ const pattern = /\x20/;
 
 ## 低级错误
 #### 禁止自身赋值或比较。
-[no-self-assign](http://eslint.cn/docs/rules/no-self-assign), [no-self-compare](http://eslint.cn/docs/rules/no-self-compare)
+[no-self-assign](http://eslint.cn/docs/rules/no-self-assign),
+[no-self-compare](http://eslint.cn/docs/rules/no-self-compare)
 
 ``` javascript
 // ✗ bad
@@ -1761,7 +1792,8 @@ if (x === x)
 ```
 
 #### 禁止对原生对象、关键字赋值。
-[no-global-assign](http://eslint.cn/docs/rules/no-global-assign), [no-shadow-restricted-names](http://eslint.cn/docs/rules/no-shadow-restricted-names)
+[no-global-assign](http://eslint.cn/docs/rules/no-global-assign),
+[no-shadow-restricted-names](http://eslint.cn/docs/rules/no-shadow-restricted-names)
 
 ``` javascript
 // ✗ bad
@@ -1791,7 +1823,11 @@ const json = JSON();
 ```
 
 #### 禁止出现重复的函数参数、对象属性、类成员方法、case 标签以及 imports。
-[no-dupe-args](http://eslint.cn/docs/rules/no-dupe-args), [no-dupe-keys](http://eslint.cn/docs/rules/no-dupe-keys), [no-dupe-class-members](http://eslint.cn/docs/rules/no-dupe-class-members), [no-duplicate-case](http://eslint.cn/docs/rules/no-duplicate-case), [no-duplicate-imports](http://eslint.cn/docs/rules/no-duplicate-imports)
+[no-dupe-args](http://eslint.cn/docs/rules/no-dupe-args),
+[no-dupe-keys](http://eslint.cn/docs/rules/no-dupe-keys),
+[no-dupe-class-members](http://eslint.cn/docs/rules/no-dupe-class-members),
+[no-duplicate-case](http://eslint.cn/docs/rules/no-duplicate-case),
+[no-duplicate-imports](http://eslint.cn/docs/rules/no-duplicate-imports)
 
 ``` javascript
 // ✗ bad
@@ -1860,7 +1896,9 @@ for (let i = 0; i < 10; i++);
 
 ## 其他
 #### 禁止使用`eval`以及类似`eval`的方法。
-[eval](http://eslint.cn/docs/rules/eval), [no-implied-eval](http://eslint.cn/docs/rules/no-implied-eval), [no-script-url](http://eslint.cn/docs/rules/no-script-url)
+[eval](http://eslint.cn/docs/rules/eval),
+[no-implied-eval](http://eslint.cn/docs/rules/no-implied-eval),
+[no-script-url](http://eslint.cn/docs/rules/no-script-url)
 
 ``` javascript
 // ✗ bad
@@ -1882,7 +1920,14 @@ alert('Hi!');
 ```
 
 #### 禁止使用`void`, `with`, `label`, `__iterator__`, `__proto__`
-[no-void](http://eslint.cn/docs/rules/no-void), [no-with](http://eslint.cn/docs/rules/no-with), [no-labels](http://eslint.cn/docs/rules/no-labels), [no-unused-labels](http://eslint.cn/docs/rules/no-unused-labels), [no-extra-label](http://eslint.cn/docs/rules/no-extra-label), [no-label-var](http://eslint.cn/docs/rules/no-label-var), [no-iterator](http://eslint.cn/docs/rules/no-iterator), [no-proto]
+[no-void](http://eslint.cn/docs/rules/no-void),
+[no-with](http://eslint.cn/docs/rules/no-with),
+[no-labels](http://eslint.cn/docs/rules/no-labels),
+[no-unused-labels](http://eslint.cn/docs/rules/no-unused-labels),
+[no-extra-label](http://eslint.cn/docs/rules/no-extra-label),
+[no-label-var](http://eslint.cn/docs/rules/no-label-var),
+[no-iterator](http://eslint.cn/docs/rules/no-iterator),
+[no-proto]
 
 #### 要求抛出异常必须用`Error`。
 [no-throw-literal](http://eslint.cn/docs/rules/no-throw-literal)
@@ -2058,7 +2103,8 @@ confirm('Are you sure?');
 ```
 
 #### 在生产环境禁止出现`console.log`和`debugger`，允许出现`console.info`、`console.warn`和`console.error`。
-[no-console](http://eslint.cn/docs/rules/no-console), [no-debugger](http://eslint.cn/docs/rules/no-debugger)
+[no-console](http://eslint.cn/docs/rules/no-console),
+[no-debugger](http://eslint.cn/docs/rules/no-debugger)
 
 ``` javascript
 // ✗ bad
