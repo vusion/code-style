@@ -52,22 +52,14 @@ npm install --save-dev stylelint stylelint-config-vusion
 /* ✗ bad */
 a {
 color:#fff;
-}
-
-.case {
   display: none;
 }
 
 /* ✓ good */
 a {
-    color:#fff;
-}
-
-.case {
-    display: none;
+    color: white;
 }
 ```
-
 #### 禁止空文件
 [no-empty-source](https://stylelint.io/user-guide/rules/no-empty-source)
 
@@ -79,34 +71,54 @@ a {
 a {}
 ```
 
+<!-- TODO: 无法限制只有一个空行，且不起作用 -->
 #### 要求文件末尾有且只有一个空行 🔧
 [no-missing-end-of-source-newline](https://stylelint.io/user-guide/rules/no-missing-end-of-source-newline)
 
 #### 禁止连续出现多个空行 🔧
 [max-empty-lines](https://stylelint.io/user-guide/rules/max-empty-lines)
+```css
+/* ✗ bad */
+a {
 
-#### 禁止出现空行？
+
+    color: pink;
+}
+
+/* ✓ good */
+a {
+    color: pink;
+}
+```
+
+#### 禁止出现空行
 [custom-property-empty-line-before](https://stylelint.io/user-guide/rules/custom-property-empty-line-before),
 [function-max-empty-lines](https://stylelint.io/user-guide/rules/function-max-empty-lines),
 [value-list-max-empty-lines](https://stylelint.io/user-guide/rules/value-list-max-empty-lines),
-[declaration-empty-line-before](https://stylelint.io/user-guide/rules/declaration-empty-line-before),
+<!-- [declaration-empty-line-before](https://stylelint.io/user-guide/rules/declaration-empty-line-before) 🔧, TODO:规则没开 -->
 [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before),
-[at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before)
+[at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before)🔧
+```css
+/* ✗ bad */
+a {} @media {}
 
-#### 禁止行尾出现空格 🔧
+/* ✓ good */
+a {}
+```
+#### 禁止行尾出现空格
 [no-eol-whitespace](https://stylelint.io/user-guide/rules/no-eol-whitespace)
 
-#### 要求分号、逗号、冒号之前没有空格，之后必须有一个空格，函数中的逗号除外 🔧
+#### 要求分号、逗号、冒号之前没有空格，之后必须有一个空格，函数中的逗号除外。@规则分号后另起一行
 [declaration-block-semicolon-newline-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-after),
 [declaration-block-semicolon-newline-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-before),
 [declaration-block-semicolon-space-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-after),
-[declaration-block-semicolon-space-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-before),
-[at-rule-semicolon-newline-after](https://stylelint.io/user-guide/rules/at-rule-semicolon-newline-after),
+[declaration-block-semicolon-space-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-before) 🔧,
+[at-rule-semicolon-newline-after](https://stylelint.io/user-guide/rules/at-rule-semicolon-newline-after)🔧,
 [at-rule-semicolon-space-before](https://stylelint.io/user-guide/rules/at-rule-semicolon-space-before),
 [selector-list-comma-newline-after](https://stylelint.io/user-guide/rules/selector-list-comma-newline-after),
 [selector-list-comma-newline-before](https://stylelint.io/user-guide/rules/selector-list-comma-newline-before),
 [selector-list-comma-space-after](https://stylelint.io/user-guide/rules/selector-list-comma-space-after),
-[selector-list-comma-space-before](https://stylelint.io/user-guide/rules/selector-list-comma-space-before),
+[selector-list-comma-space-before](https://stylelint.io/user-guide/rules/selector-list-comma-space-before)🔧,
 [value-list-comma-newline-after](https://stylelint.io/user-guide/rules/value-list-comma-newline-after),
 [value-list-comma-newline-before](https://stylelint.io/user-guide/rules/value-list-comma-newline-before),
 [value-list-comma-space-after](https://stylelint.io/user-guide/rules/value-list-comma-space-after),
@@ -115,13 +127,43 @@ a {}
 [function-comma-newline-before](https://stylelint.io/user-guide/rules/function-comma-newline-before),
 [function-comma-space-after](https://stylelint.io/user-guide/rules/function-comma-space-after),
 [function-comma-space-before](https://stylelint.io/user-guide/rules/function-comma-space-before),
+[media-query-list-comma-newline-after](https://stylelint.io/user-guide/rules/media-query-list-comma-newline-after),
+[media-query-list-comma-newline-before](https://stylelint.io/user-guide/rules/media-query-list-comma-newline-before),
+[declaration-colon-newline-after](https://stylelint.io/user-guide/rules/declaration-colon-newline-after),
+[media-query-list-comma-space-after](https://stylelint.io/user-guide/rules/media-query-list-comma-space-after),
+[media-query-list-comma-space-before](https://stylelint.io/user-guide/rules/media-query-list-comma-space-before),
 [declaration-colon-newline-after](https://stylelint.io/user-guide/rules/declaration-colon-newline-after),
 [declaration-colon-space-after](https://stylelint.io/user-guide/rules/declaration-colon-space-after),
 [declaration-colon-space-before](https://stylelint.io/user-guide/rules/declaration-colon-space-before),
 [media-feature-colon-space-after](https://stylelint.io/user-guide/rules/media-feature-colon-space-after),
 [media-feature-colon-space-before](https://stylelint.io/user-guide/rules/media-feature-colon-space-before)
+```css
+/* ✗ bad */
+a ,b
+,
+span {
+    transform: translate(1
+  ,1)
+  ;top: 0;left: 0;
+  color :pink
+}
+@media (max-width :600px) {}
+@import url("x.css") ; a {}
 
-#### 禁止在小括号（伪类选择器、函数、媒体查询）和中括号（属性选择器）内加空格，要求在大括号（块）内边缘加一个空格，括号之间加一个空格 🔧
+/* ✓ good */
+a, b, span {
+    transform: translate(1,1);
+    top: 0;
+    left: 0;
+    color: pink;
+}
+@media (max-width: 600px) {}
+@import url("x.css");
+a {}
+
+```
+
+#### 禁止在小括号（伪类选择器、函数、媒体查询）和中括号（属性选择器）内加空格，要求在大括号（块）内边缘加一个空格，括号之间加一个空格
 [selector-attribute-brackets-space-inside](https://stylelint.io/user-guide/rules/selector-attribute-brackets-space-inside),
 [selector-pseudo-class-parentheses-space-inside](https://stylelint.io/user-guide/rules/selector-pseudo-class-parentheses-space-inside),
 [function-parentheses-space-inside](https://stylelint.io/user-guide/rules/function-parentheses-space-inside),
@@ -130,18 +172,18 @@ a {}
 
 ``` css
 /* ✗ bad */
-input:not( [type="submit"] ) {}
-input:not( [type="submit"]) {}
+input:not( [ type= "submit"] ) {}
 [ target ] {}
-[ target =_blank] {}
+@media ( max-width:600px) {}
 
 /* ✓ good */
-[target] {}
-[target=_blank] {}
 input:not([type="submit"]) {}
+[target] {}
+@media (max-width: 600px) {}
+
 ```
 
-#### 要求块的大括号前必须要有空格
+#### 要求块在独立的行，大括号前不能有空行，必须要有空格
 
 [block-closing-brace-empty-line-before](https://stylelint.io/user-guide/rules/block-closing-brace-empty-line-before),
 [block-closing-brace-newline-after](https://stylelint.io/user-guide/rules/block-closing-brace-newline-after),
@@ -151,24 +193,31 @@ input:not([type="submit"]) {}
 [block-opening-brace-newline-after](https://stylelint.io/user-guide/rules/block-opening-brace-newline-after),
 [block-opening-brace-newline-before](https://stylelint.io/user-guide/rules/block-opening-brace-newline-before),
 [block-opening-brace-space-after](https://stylelint.io/user-guide/rules/block-opening-brace-space-after),
-[block-opening-brace-space-before](https://stylelint.io/user-guide/rules/block-opening-brace-space-before)
+[block-opening-brace-space-before](https://stylelint.io/user-guide/rules/block-opening-brace-space-before)🔧
 
 ``` css
 /* ✗ bad */
-a{ color: pink; }
-a
-{ color: pink; }
+a{color: pink;
+    top: 0;
+}b
+{color: pink;}
 
 /* ✓ good */
-a { color: pink; }
+a {
+    color: pink;
+    top: 0;
+}
+b { color: pink; }
 ```
 
-#### 允许出现空块
+#### 不允许出现空块
 [block-no-empty](https://stylelint.io/user-guide/rules/block-no-empty)
 
 ``` css
-/* ✓ ok */
+/* ✓ bad */
 a { }
+
+/* ✓ good */
 a { color: pink; }
 ```
 
@@ -181,15 +230,18 @@ a { color: pink; }
 
 ``` css
 /* ✗ bad */
+[ target ="_blank"] {}
 a { top: calc(1px+2px); }
-
+@media (width >=600px) {}
 /* ✓ good */
+[target="_blank"] {}
 a { top: calc(1px + 2px); }
+@media (width >= 600px) {}
 ```
 
 #### 要求选择器之间必须有空格，但不能有多余的空格
-[selector-combinator-space-after](https://stylelint.io/user-guide/rules/selector-combinator-space-after),
-[selector-combinator-space-before](https://stylelint.io/user-guide/rules/selector-combinator-space-before),
+[selector-combinator-space-after](https://stylelint.io/user-guide/rules/selector-combinator-space-after)🔧,
+[selector-combinator-space-before](https://stylelint.io/user-guide/rules/selector-combinator-space-before)🔧,
 [selector-descendant-combinator-no-non-space](https://stylelint.io/user-guide/rules/selector-descendant-combinator-no-non-space)
 
 ``` css
@@ -209,8 +261,8 @@ a> b { color: pink; }
 [declaration-bang-space-before](https://stylelint.io/user-guide/rules/declaration-bang-space-before),
 
 ## 大小写
-#### 要求@规则，选择器的标签、伪类、伪元素，属性、关键值、单位、函数名、颜色值、媒体查询均小写 🔧
-[at-rule-name-case](https://stylelint.io/user-guide/rules/at-rule-name-case),
+#### 要求@规则，选择器的标签、伪类、伪元素，属性、关键值、单位、函数名、颜色值、媒体查询均小写
+[at-rule-name-case](https://stylelint.io/user-guide/rules/at-rule-name-case)🔧,
 [selector-type-case](https://stylelint.io/user-guide/rules/selector-type-case),
 [selector-pseudo-element-case](https://stylelint.io/user-guide/rules/selector-pseudo-element-case),
 [selector-pseudo-class-case](https://stylelint.io/user-guide/rules/selector-pseudo-class-case),
@@ -259,19 +311,18 @@ li::before {}
 
 ## 分号
 #### 块结尾也使用分号，禁止多余的分号
-[declaration-block-trailing-semicolon](https://stylelint.io/user-guide/rules/declaration-block-trailing-semicolon),
+[declaration-block-trailing-semicolon](https://stylelint.io/user-guide/rules/declaration-block-trailing-semicolon)🔧,
 [no-extra-semicolons](https://stylelint.io/user-guide/rules/no-extra-semicolons)
 
 ``` css
 /* ✗ bad */
+.case { font-size: 16px; color: red }
 @import "x.css";;
 
-.case { font-size: 16px; color: red }
-
 /* ✓ good */
+.case { font-size: 16px; color: red; }
 @import "x.css";
 
-.case { font-size: 16px; color: red; }
 ```
 
 ## 引号
@@ -284,13 +335,9 @@ li::before {}
 ``` css
 /* ✗ bad */
 [title=flower] {}
-[class^=top] {}
-[data-attribute='component'] {}
 
 /* ✓ good */
 [target="_blank"] {}
-[class|="top"] {}
-[title~='text'] {}
 ```
 
 #### 要求url必须添加引号
@@ -298,10 +345,17 @@ li::before {}
 
 #### 字体为多个单词时必须使用引号
 [font-family-name-quotes](https://stylelint.io/user-guide/rules/font-family-name-quotes)
+``` css
+/* ✗ bad */
+a { font-family: Times New Roman, Times, serif; }
+
+/* ✓ good */
+a { font-family: 'Times New Roman', Times, serif; }
+```
 
 ## 选择器
 #### 要求伪元素使用两个冒号
-[selector-pseudo-element-colon-notation](https://stylelint.io/user-guide/rules/selector-pseudo-element-colon-notation)
+[selector-pseudo-element-colon-notation](https://stylelint.io/user-guide/rules/selector-pseudo-element-colon-notation)🔧
 
 ``` css
 /* ✗ bad */
@@ -310,9 +364,18 @@ a:before { color: pink; }
 /* ✓ good */
 a::before { color: pink; }
 ```
-
+<!-- TODO: 这个描述清楚吗 -->
 #### 要求规则之间没有降级特性
 [no-descending-specificity](https://stylelint.io/user-guide/rules/no-descending-specificity)
+``` css
+/* ✗ bad */
+#wrapper a { color: pink; }
+a { color: gray; }
+
+/* ✓ good */
+a { color: gray; }
+#wrapper a { color: pink; }
+```
 
 ## 属性
 #### 每行最多定义2个属性
@@ -333,7 +396,7 @@ a {
 
 #### 尽量简写属性
 [declaration-block-no-redundant-longhand-properties](https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties),
-[shorthand-property-no-redundant-values](https://stylelint.io/user-guide/rules/shorthand-property-no-redundant-values)
+[shorthand-property-no-redundant-values](https://stylelint.io/user-guide/rules/shorthand-property-no-redundant-values)🔧
 
 ``` css
 /* ✗ bad */
@@ -356,7 +419,7 @@ a {
 }
 a { margin: 1px; }
 ```
-
+<!-- TODO: 要不要和declaration-block-no-duplicate-properties放一起 -->
 #### 禁止简写属性覆盖展开写法的属性
 [declaration-block-no-shorthand-property-overrides](https://stylelint.io/user-guide/rules/declaration-block-no-shorthand-property-overrides)
 
@@ -382,13 +445,31 @@ a {
 #### 为0数字不带单位
 [length-zero-no-unit](https://stylelint.io/user-guide/rules/length-zero-no-unit)
 
+<!-- TODD: 为什么是6位？ -->
 #### 数字最多保留6位小数
 [number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision)
+```css
+/* ✓ bad */
+a { top: 3.2450908px; }
 
+/* ✓ good */
+a { top: 3.245px; }
+
+```
+<!-- TODO:color-name这个规则要开吗？ 要开的话，这个页面违反这个规则的例子最好改掉。 这两条规则有些冲突-->
 #### 颜色尽可能使用名称，尽可能使用缩写的十六进制
 [color-named](https://stylelint.io/user-guide/rules/color-named),
 [color-hex-length](https://stylelint.io/user-guide/rules/color-hex-length)
+```css
+/* ✗ bad */
+a { color: #000; }
+a { color: #ffffffaa; }
 
+/* ✓ good */
+a { color: black; }
+a { color: #fffa; }
+```
+<!-- TODO:要这么多例子吗 -->
 #### `linear-gradient()`中的方向属性值必须符合标准语法
 [function-linear-gradient-no-nonstandard-direction](https://stylelint.io/user-guide/rules/function-linear-gradient-no-nonstandard-direction)
 
@@ -405,25 +486,24 @@ a {
 ```
 
 ## 注释
-#### 要求注释的符号和内容之间有一个空格
+#### 要求注释必须有内容，且符号和内容之间有一个空格或空行
 [comment-whitespace-inside](https://stylelint.io/user-guide/rules/comment-whitespace-inside)
-
-#### 禁止出现空注释
 [comment-no-empty](https://stylelint.io/user-guide/rules/comment-no-empty)
 
 ``` css
 /* ✗ bad */
 /**/
-/* */
 /*
 
  */
+/*comment*/
 
 /* ✓ good */
 /* comment */
 /*
  * Multi-line Comment
 **/
+
 ```
 
 #### 禁止双斜线的注释
@@ -461,6 +541,8 @@ p {
     font-weight: 400;
     font-size: 1rem;
 }
+@import 'a.css';
+@import 'a.css';
 
 /* ✓ good */
 a {
@@ -472,6 +554,7 @@ p {
     font-size: 1rem;
     font-weight: 400;
 }
+@import 'a.css';
 ```
 
 #### 禁止出现未知的@规则，选择器标签、伪类、伪元素，属性、单位、颜色值，媒体查询，动画
@@ -490,13 +573,21 @@ p {
 @unknow {}
 @media screen and (unknown) {}
 
-a:hoverr {
+a:unknown {
     colr: blue;
     background: #y3;
     width: 10pixels;
 }
 a::element {}
 tag {}
+a {
+    width: 10pixels;
+}
+a {
+    color: #00;
+}
+a { animation-name: fancy-slide; }
+
 ```
 
 ``` css
@@ -511,6 +602,14 @@ a:hover {
 }
 a::before {}
 input {}
+a {
+    width: 10px;
+}
+a {
+    color: #00;
+}
+a { animation-name: fancy-slide; }
+@keyframes fancy-slide {}
 ```
 
 #### 禁止字符串换行
@@ -531,31 +630,56 @@ a {
 
 #### 要求字体结尾必须添加通用词
 [font-family-no-missing-generic-family-keyword](https://stylelint.io/user-guide/rules/font-family-no-missing-generic-family-keyword)
+``` css
+/* ✗ bad */
+a {
+    font-family: Helvetica, Arial, Verdana, Tahoma;
+}
+/* ✓ good */
+a {
+    font-family: Helvetica, Arial, Verdana, Tahoma, serif;
+}
+```
 
 #### keyframe 中禁止添加 important
 [keyframe-declaration-no-important](https://stylelint.io/user-guide/rules/keyframe-declaration-no-important)
-
+```css
+/* ✗ bad */
+@keyframes important1 {
+    from {
+        margin-top: 50px;
+    }
+    to {
+        margin-top: 100px !important;
+    }
+}
+/* ✓ good */
+@keyframes important1 {
+    from {
+        margin-top: 50px;
+    }
+    to {
+        margin-top: 100px;
+    }
+}
+```
 ## 参考
 
 - [stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended)
 - [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
 
-<!--
-'at-rule-name-space-after': ['always'],
-#### 每块样式定义之间禁止空行 🔧
+<!-- TODO：为什么注释掉
+'at-rule-name-space-after': ['always-single-line'],
+#### 同行的媒体查询后必须后空格
 
-[rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before)
+[at-rule-name-space-after](https://stylelint.io/user-guide/rules/at-rule-name-space-after)
 
 ``` css
 /* ✗ bad */
-a {}
-
-b {}
+@charset"UTF-8";
 
 /* ✓ good */
-a {}
-b {}
-```
+@charset "UTF-8";
 
-       'function-parentheses-newline-inside': ['never-multi-line'],
+```
 -->
