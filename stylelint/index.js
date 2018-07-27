@@ -16,7 +16,9 @@ module.exports = {
         'declaration-block-no-duplicate-properties': true,
         'declaration-block-no-shorthand-property-overrides': true,
         'block-no-empty': null,
-        'selector-pseudo-class-no-unknown': true,
+        'selector-pseudo-class-no-unknown': [true, {
+            ignorePseudoClasses: ['global', 'local'],
+        }],
         'selector-pseudo-element-no-unknown': true,
         'selector-type-no-unknown': true,
         'media-feature-name-no-unknown': true,
@@ -126,7 +128,9 @@ module.exports = {
         'declaration-colon-space-after': ['always-single-line'],
         'declaration-colon-space-before': ['never'],
         // 'declaration-empty-line-before': ['never'], // TODO: never有问题吗？
-        'declaration-block-semicolon-newline-after': ['always-multi-line'], // TODO: 与一行最多定义两个规则有冲突。同时设置，只有a{x:1; b:2}在一行才是validate的
+        // 'declaration-block-semicolon-newline-after': ['always-multi-line'], // TODO: 与一行最多定义两个规则有冲突。同时设置，只有a{x:1; b:2}在一行才是validate的
+        // 'declaration-empty-line-before': ['never'],
+        // @has-problem: 'declaration-block-semicolon-newline-after': ['always-multi-line'],
         'declaration-block-semicolon-newline-before': ['never-multi-line'],
         'declaration-block-semicolon-space-after': ['always-single-line'],
         'declaration-block-semicolon-space-before': ['never'],
@@ -135,8 +139,10 @@ module.exports = {
         'block-closing-brace-newline-after': ['always'],
         'block-closing-brace-newline-before': ['always-multi-line'],
         // @has-problem: 'block-closing-brace-space-after': ['never'], //TODO: 不需要，有了‘block-closing-brace-newline-after’的限制，不会出现这个情况
+        // @has-problem: 'block-closing-brace-newline-before': ['always-multi-line'],
+        // @has-problem: 'block-closing-brace-space-after': ['never'],
         'block-closing-brace-space-before': ['always-single-line'],
-        'block-opening-brace-newline-after': ['always-multi-line'],
+        // @has-problem: 'block-opening-brace-newline-after': ['always-multi-line'],
         // @has-problem: 'block-opening-brace-newline-before': ['never-single-line'],
         'block-opening-brace-space-after': ['always-single-line'],
         'block-opening-brace-space-before': ['always'],
@@ -176,7 +182,7 @@ module.exports = {
         'at-rule-name-case': ['lower'],
         // @disagreed: 'at-rule-name-newline-after':
         'at-rule-name-space-after': ['always-single-line'],
-        'at-rule-semicolon-newline-after': ['always'],
+        // @has-problem: 'at-rule-semicolon-newline-after': ['always'],
         'at-rule-semicolon-space-before': ['never'],
         // @disagreed: 'comment-empty-line-before': ['never'],
         'comment-whitespace-inside': ['always'],
