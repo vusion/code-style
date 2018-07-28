@@ -40,7 +40,7 @@
  * Size extends
  */
 
-.root[size="small"] {
+.root[ size="small"] {
     height: 30px;
     line-height: 30px;
     padding: 0 10px;
@@ -90,3 +90,4 @@
     80% { transform: rotate(360deg); }
     100% { transform: rotate(360deg); }
 }
+

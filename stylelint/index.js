@@ -1,5 +1,5 @@
 module.exports = {
-    // processors: ['stylelint-processor-arbitrary-tags', { fileFilterRegex: [/\.md$/] }],
+    // processors: ['@mapbox/stylelint-processor-arbitrary-tags', { fileFilterRegex: [/\.vue$/], startTag: '<style module>', endTag: '</style>' }],
     rules: {
         // Possible errors
         'color-no-invalid-hex': true,
