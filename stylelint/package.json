@@ -3,7 +3,7 @@
   "description": "Sharable stylelint config for Vusion",
   "version": "1.0.4",
   "scripts": {
-    "test": "stylelint ./test/*.html ./test/*.vue ./test/*.css"
+    "test": "stylelint ./test/*.{html,vue,css}"
   },
   "license": "MIT",
   "dependencies": {

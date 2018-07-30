@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "eslint -c ./all.js ./test/*.js ./test/*.vue --fix"
+    "test": "eslint -c ./all.js ./test/*.{js,vue} --fix"
   },
   "license": "MIT",
   "keywords": [
