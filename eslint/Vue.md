@@ -67,8 +67,8 @@
 #### 要求`v-on`统一使用`@` 🔧
 [v-on-style](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/v-on-style.md)
 
-#### 不推荐混淆地使用`v-for`和`v-if`
-[no-confusing-v-for-v-if](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-confusing-v-for-v-if.md)
+#### 不推荐在同一个元素上使用`v-for`和`v-if`
+[no-use-v-if-with-v-for](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-use-v-if-with-v-for.md)
 
 在v-for元素上使用v-if指令时，没有使用v-for中使用的变量，会发生警告。
 

@@ -14,13 +14,13 @@ module.exports = {
         'vue/html-indent': [0, 4, {
             attribute: 1,
             closeBracket: 0,
-        }],
-        'vue/script-indent': [2, 4, {
+        }], // @has-problem
+        'vue/script-indent': [0, 4, {
             switchCase: 1,
-        }],
+        }], // @has-problem
         'vue/no-unused-vars': [1],
         'vue/require-v-for-key': [1],
-        'vue/no-confusing-v-for-v-if': [1],
+        'vue/no-use-v-if-with-v-for': [1],
         'vue/name-property-casing': [2, 'kebab-case'],
         'vue/html-self-closing': [2, {
             html: { void: 'never', normal: 'never', component: 'never' },
