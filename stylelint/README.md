@@ -51,7 +51,7 @@ npm install --save-dev stylelint stylelint-config-vusion
 ``` css
 /* ✗ bad */
 a {
-color:#fff;
+color:white;
   display: none;
 }
 
@@ -95,7 +95,7 @@ a {
 [custom-property-empty-line-before](https://stylelint.io/user-guide/rules/custom-property-empty-line-before),
 [function-max-empty-lines](https://stylelint.io/user-guide/rules/function-max-empty-lines),
 [value-list-max-empty-lines](https://stylelint.io/user-guide/rules/value-list-max-empty-lines),
-<!-- [declaration-empty-line-before](https://stylelint.io/user-guide/rules/declaration-empty-line-before) 🔧, TODO:规则没开 -->
+[declaration-empty-line-before](https://stylelint.io/user-guide/rules/declaration-empty-line-before) 🔧, TODO:规则没开
 [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before),
 [at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before)🔧
 ```css
@@ -109,7 +109,7 @@ a {}
 [no-eol-whitespace](https://stylelint.io/user-guide/rules/no-eol-whitespace)
 
 #### 要求分号、逗号、冒号之前没有空格，之后必须有一个空格，函数中的逗号除外。@规则分号后另起一行
-[declaration-block-semicolon-newline-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-after),
+<!-- [declaration-block-semicolon-newline-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-after), -->
 [declaration-block-semicolon-newline-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-before),
 [declaration-block-semicolon-space-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-after),
 [declaration-block-semicolon-space-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-before) 🔧,
@@ -187,8 +187,8 @@ input:not([type="submit"]) {}
 
 [block-closing-brace-empty-line-before](https://stylelint.io/user-guide/rules/block-closing-brace-empty-line-before),
 [block-closing-brace-newline-after](https://stylelint.io/user-guide/rules/block-closing-brace-newline-after),
-[block-closing-brace-newline-before](https://stylelint.io/user-guide/rules/block-closing-brace-newline-before),
-[block-closing-brace-space-after](https://stylelint.io/user-guide/rules/block-closing-brace-space-after),
+<!-- [block-closing-brace-newline-before](https://stylelint.io/user-guide/rules/block-closing-brace-newline-before), -->
+<!-- [block-closing-brace-space-after](https://stylelint.io/user-guide/rules/block-closing-brace-space-after), -->
 [block-closing-brace-space-before](https://stylelint.io/user-guide/rules/block-closing-brace-space-before),
 [block-opening-brace-newline-after](https://stylelint.io/user-guide/rules/block-opening-brace-newline-after),
 [block-opening-brace-newline-before](https://stylelint.io/user-guide/rules/block-opening-brace-newline-before),
@@ -364,7 +364,6 @@ a:before { color: pink; }
 /* ✓ good */
 a::before { color: pink; }
 ```
-<!-- TODO: 这个描述清楚吗 -->
 #### 要求规则之间没有降级特性
 [no-descending-specificity](https://stylelint.io/user-guide/rules/no-descending-specificity)
 ``` css
@@ -419,7 +418,6 @@ a {
 }
 a { margin: 1px; }
 ```
-<!-- TODO: 要不要和declaration-block-no-duplicate-properties放一起 -->
 #### 禁止简写属性覆盖展开写法的属性
 [declaration-block-no-shorthand-property-overrides](https://stylelint.io/user-guide/rules/declaration-block-no-shorthand-property-overrides)
 
@@ -456,7 +454,6 @@ a { top: 3.2450908px; }
 a { top: 3.245px; }
 
 ```
-<!-- TODO:color-name这个规则要开吗？ 要开的话，这个页面违反这个规则的例子最好改掉。 这两条规则有些冲突-->
 #### 颜色尽可能使用名称，尽可能使用缩写的十六进制
 [color-named](https://stylelint.io/user-guide/rules/color-named),
 [color-hex-length](https://stylelint.io/user-guide/rules/color-hex-length)
@@ -469,20 +466,19 @@ a { color: #ffffffaa; }
 a { color: black; }
 a { color: #fffa; }
 ```
-<!-- TODO:要这么多例子吗 -->
 #### `linear-gradient()`中的方向属性值必须符合标准语法
 [function-linear-gradient-no-nonstandard-direction](https://stylelint.io/user-guide/rules/function-linear-gradient-no-nonstandard-direction)
 
 ``` css
 /* ✗ bad */
-.foo { background: linear-gradient(top, #fff, #000); }
-.foo { background: linear-gradient(45, #fff, #000); }
-.foo { background: linear-gradient(to top top, #fff, #000); }
+.foo { background: linear-gradient(top,white,black); }
+.foo { background: linear-gradient(45,white,black); }
+.foo { background: linear-gradient(to top top,white,black); }
 
 /* ✓ good */
-.foo { background: linear-gradient(to top, #fff, #000); }
-.foo { background: linear-gradient(45deg, #fff, #000); }
-.foo { background: linear-gradient(1.57rad, #fff, #000); }
+.foo { background: linear-gradient(to top,white,black); }
+.foo { background: linear-gradient(45deg,white,black); }
+.foo { background: linear-gradient(1.57rad,white,black); }
 ```
 
 ## 注释

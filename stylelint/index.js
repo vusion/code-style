@@ -47,7 +47,7 @@ module.exports = {
         // @unnessesary: 'unit-blacklist',
         // @unnessesary: 'unit-whitelist',
         'shorthand-property-no-redundant-values': true,
-        // @disagreed: 'value-no-vendor-prefix': true, //TODO: 不推荐使用autoPrefixer吗？
+        // @disagreed: 'value-no-vendor-prefix': true,
         // @unnessesary: 'custom-property-pattern',
         // @unnessesary: 'property-blacklist',
         // @disagreed: 'property-no-vendor-prefix',
@@ -56,7 +56,7 @@ module.exports = {
         // @disagreed: 'declaration-no-important': true,
         // @unnessesary: 'declaration-property-unit-blacklist',
         // @unnessesary: 'declaration-property-unit-whitelist',
-        // @unnessesary: 'declaration-property-value-blacklist', //TODO:需不需要根据兼容性禁用一些值，比如蜂巢不能用flex
+        // @unnessesary: 'declaration-property-value-blacklist',
         // @unnessesary: 'declaration-property-value-whitelist',
         'declaration-block-single-line-max-declarations': [2],
         // @unnessesary: 'selector-attribute-operator-blacklist',
@@ -91,7 +91,7 @@ module.exports = {
         // @unnessesary: 'at-rule-no-vendor-prefix',
         // @unnessesary: 'at-rule-whitelist',
         // @unnessesary: 'comment-word-blacklist',
-        // @TODO: max-nesting-depth, //TODO:现在为什么不加？
+        // @TODO: max-nesting-depth,
         'no-unknown-animations': true,
 
         // Stylistic issues
@@ -127,8 +127,8 @@ module.exports = {
         'declaration-colon-newline-after': ['always-multi-line'],
         'declaration-colon-space-after': ['always-single-line'],
         'declaration-colon-space-before': ['never'],
-        // 'declaration-empty-line-before': ['never'], // TODO: never有问题吗？
-        // 'declaration-block-semicolon-newline-after': ['always-multi-line'], // TODO: 与一行最多定义两个规则有冲突。同时设置，只有a{x:1; b:2}在一行才是validate的
+        'declaration-empty-line-before': ['never'],
+        // 'declaration-block-semicolon-newline-after': ['always-multi-line'], //与一行最多定义两个规则有冲突。同时设置，只有a{x:1; b:2}在一行才是validate的
         // 'declaration-empty-line-before': ['never'],
         // @has-problem: 'declaration-block-semicolon-newline-after': ['always-multi-line'],
         'declaration-block-semicolon-newline-before': ['never-multi-line'],
@@ -137,10 +137,8 @@ module.exports = {
         'declaration-block-trailing-semicolon': ['always'],
         'block-closing-brace-empty-line-before': ['never'],
         'block-closing-brace-newline-after': ['always'],
-        'block-closing-brace-newline-before': ['always-multi-line'],
-        // @has-problem: 'block-closing-brace-space-after': ['never'], //TODO: 不需要，有了‘block-closing-brace-newline-after’的限制，不会出现这个情况
+        // @has-problem: 'block-closing-brace-space-after': ['never'], //不需要，有了‘block-closing-brace-newline-after’的限制，不会出现这个情况
         // @has-problem: 'block-closing-brace-newline-before': ['always-multi-line'],
-        // @has-problem: 'block-closing-brace-space-after': ['never'],
         'block-closing-brace-space-before': ['always-single-line'],
         // @has-problem: 'block-opening-brace-newline-after': ['always-multi-line'],
         // @has-problem: 'block-opening-brace-newline-before': ['never-single-line'],
@@ -190,6 +188,6 @@ module.exports = {
         'max-empty-lines': [1],
         // @disagreed: 'max-line-length': [],
         'no-eol-whitespace': true,
-        'no-missing-end-of-source-newline': true, // TODO: nouse
+        'no-missing-end-of-source-newline': true, // TODO: noeffective
     },
 };
