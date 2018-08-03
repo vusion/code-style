@@ -1,5 +1,4 @@
 module.exports = {
-    // processors: ['@mapbox/stylelint-processor-arbitrary-tags', { fileFilterRegex: [/\.vue$/], startTag: '<style module>', endTag: '</style>' }],
     rules: {
         // Possible errors
         'color-no-invalid-hex': true,
@@ -127,10 +126,8 @@ module.exports = {
         'declaration-colon-newline-after': ['always-multi-line'],
         'declaration-colon-space-after': ['always-single-line'],
         'declaration-colon-space-before': ['never'],
-        'declaration-empty-line-before': ['never'],
-        // 'declaration-block-semicolon-newline-after': ['always-multi-line'], //与一行最多定义两个规则有冲突。同时设置，只有a{x:1; b:2}在一行才是validate的
-        // 'declaration-empty-line-before': ['never'],
-        // @has-problem: 'declaration-block-semicolon-newline-after': ['always-multi-line'],
+        // @has-problem: 'declaration-empty-line-before': ['never'],
+        // @has-problem: 'declaration-block-semicolon-newline-after': ['always-multi-line'], // TODO: 与一行最多定义两个规则有冲突。同时设置，只有a{x:1; b:2}在一行才是validate的
         'declaration-block-semicolon-newline-before': ['never-multi-line'],
         'declaration-block-semicolon-space-after': ['always-single-line'],
         'declaration-block-semicolon-space-before': ['never'],
