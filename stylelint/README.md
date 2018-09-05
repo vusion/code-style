@@ -108,7 +108,7 @@ a {}
 #### 禁止行尾出现空格
 [no-eol-whitespace](https://stylelint.io/user-guide/rules/no-eol-whitespace)
 
-#### 要求分号、逗号、冒号之前没有空格，之后必须有一个空格，函数中的逗号除外。@规则分号后另起一行
+#### 要求分号、逗号、冒号之前没有空格，之后必须有一个空格。@规则分号后另起一行
 <!-- [declaration-block-semicolon-newline-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-after), -->
 [declaration-block-semicolon-newline-before](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-before),
 [declaration-block-semicolon-space-after](https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-after),

@@ -1,7 +1,7 @@
 {
   "name": "stylelint-config-vusion",
   "description": "Sharable stylelint config for Vusion",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "scripts": {
     "test": "stylelint ./test/*.{html,vue,css}"
   },

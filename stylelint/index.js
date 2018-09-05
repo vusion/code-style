@@ -100,7 +100,7 @@ module.exports = {
         // @TODO: 'font-weight-notation': [], //named-where-possible
         'function-comma-newline-after': ['always-multi-line'],
         'function-comma-newline-before': ['never-multi-line'],
-        'function-comma-space-after': ['never-single-line'],
+        'function-comma-space-after': ['always-single-line'],
         'function-comma-space-before': ['never'],
         'function-max-empty-lines': [0],
         'function-name-case': ['lower'],
