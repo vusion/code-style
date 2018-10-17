@@ -21,7 +21,9 @@ module.exports = {
         'selector-pseudo-element-no-unknown': true,
         'selector-type-no-unknown': true,
         'media-feature-name-no-unknown': true,
-        'at-rule-no-unknown': true,
+        'at-rule-no-unknown': [true, {
+            ignoreAtRules: ['extend'],
+        }],
         'comment-no-empty': true,
         'no-descending-specificity': [true, {
             severity: 'warning',
