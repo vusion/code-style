@@ -39,23 +39,23 @@ module.exports = {
         'vue/attributes-order': [2], // Default order is good
 
         // Uncategorized
-        'vue/array-bracket-spacing': [2, 'never'],
+        // 'vue/array-bracket-spacing': [2, 'never'],
         'vue/component-name-in-template-casing': [2, 'kebab-case'],
-        'vue/eqeqeq': [2, 'always'],
-        'vue/key-spacing': [2],
-        'vue/match-component-file-name': [2, {
-            extensions: ['jsx', 'vue'],
-            shouldMatchCase: true,
-        }],
+        // 'vue/eqeqeq': [2, 'always'],
+        // 'vue/key-spacing': [2],
+        // 'vue/match-component-file-name': [2, {
+        //     extensions: ['jsx', 'vue'],
+        //     shouldMatchCase: true,
+        // }],
         // @TODO: 'vue/no-restricted-syntax':
-        'vue/object-curly-spacing': [2, 'always'],
+        // 'vue/object-curly-spacing': [2, 'always'],
         // @disagree: vue/require-direct-export
         'vue/script-indent': [2, 4, {
             baseIndent: 0,
             switchCase: 1,
         }],
-        'vue/space-infix-ops': [2],
-        'vue/space-unary-ops': [2],
+        // 'vue/space-infix-ops': [2],
+        // 'vue/space-unary-ops': [2],
     },
     overrides: [{
         'files': ['*.vue'],
