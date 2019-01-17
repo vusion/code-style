@@ -189,7 +189,7 @@ module.exports = {
         // @useless: 'max-params',
         // @useless: 'max-statements',
         // @useless: 'max-statements-per-line',
-        'multiline-comment-style': [2],
+        'multiline-comment-style': [0],
         'multiline-ternary': [2, 'never'],
         'new-cap': [2],
         'new-parens': [1],

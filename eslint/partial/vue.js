@@ -9,13 +9,14 @@ module.exports = {
     plugins: ['vue'],
     rules: {
         // Priority A: Essential
+        'vue/no-unused-components': [1],
         'vue/no-unused-vars': [1],
         'vue/require-v-for-key': [1],
         'vue/no-use-v-if-with-v-for': [1],
         'vue/no-confusing-v-for-v-if': [0],
 
         // Priority B: Strongly Recommended
-        'vue/html-closing-bracket-newline': [2],
+        'vue/html-closing-bracket-newline': [0], // @has-problem
         'vue/html-closing-bracket-spacing': [2],
         'vue/html-indent': [2, 4, {
             baseIndent: 0,
@@ -36,7 +37,7 @@ module.exports = {
 
         // Priority C: Recommended
         'vue/order-in-components': [1],
-        'vue/attributes-order': [2], // Default order is good
+        'vue/attributes-order': [0], // Default order is good
 
         // Uncategorized
         // 'vue/array-bracket-spacing': [2, 'never'],
@@ -58,9 +59,9 @@ module.exports = {
         // 'vue/space-unary-ops': [2],
     },
     overrides: [{
-        'files': ['*.vue'],
-        'rules': {
-            'indent': 'off',
+        files: ['*.vue'],
+        rules: {
+            indent: 'off',
         },
     }],
 };
