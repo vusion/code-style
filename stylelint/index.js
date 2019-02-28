@@ -184,7 +184,7 @@ module.exports = {
         // @disagreed: 'comment-empty-line-before': ['never'],
         'comment-whitespace-inside': ['always'],
         indentation: [4],
-        'max-empty-lines': [1],
+        'max-empty-lines': [2], // @bug: 1 for @extend;
         // @disagreed: 'max-line-length': [],
         'no-eol-whitespace': true,
         'no-missing-end-of-source-newline': true, // TODO: noeffective
