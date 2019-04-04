@@ -14,6 +14,7 @@ module.exports = {
         'vue/require-v-for-key': [1],
         'vue/no-use-v-if-with-v-for': [1],
         'vue/no-confusing-v-for-v-if': [0],
+        'vue/require-component-is': [0], // @has-bug
 
         // Priority B: Strongly Recommended
         'vue/html-closing-bracket-newline': [0], // @has-problem
