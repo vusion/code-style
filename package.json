@@ -5,7 +5,8 @@
   "scripts": {
     "stylelint": "cd stylelint && npm run test",
     "eslint": "cd eslint && npm run test",
+    "tslint": "cd tilint && npm run test",
     "test": "npm run eslint && npm run stylelint",
-    "install": "cd stylelint && npm install && cd ../eslint && npm install"
+    "install": "cd stylelint && npm install && cd ../eslint && npm install && cd ../tslint && npm install"
   }
 }

@@ -1,0 +1,31 @@
+{
+  "name": "tslint-config-vusion",
+  "description": "Sharable tslint config for Vusion",
+  "version": "0.0.1",
+  "author": "TonyWang <452663934@qq.com>",
+  "repository": "vusion/tslint-config",
+  "bugs": {
+    "url": "https://github.com/vusion/code-style/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "tslint -c ./all.js --fix"
+  },
+  "license": "MIT",
+  "keywords": [
+    "tslint",
+    "tslint-config",
+    "tslintconfig",
+    "vusion"
+  ],
+  "tags": [
+    "tslint",
+    "tslint-config",
+    "tslintconfig",
+    "vusion"
+  ],
+  "devDependencies": {
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1"
+  }
+}
