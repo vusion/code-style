@@ -1,8 +1,8 @@
-import format from'./ts-format';
-import func from'./ts-func';
-import maintain from'./ts-maintain';
-import spec from'./ts-spec';
-import style from'./ts-style';
+const format = require('./ts-format');
+const func = require('./ts-func');
+const maintain = require('./ts-maintain');
+const spec = require('./ts-spec');
+const style = require('./ts-style');
 
 
 module.exports = {

@@ -9,7 +9,7 @@
   },
   "main": "./tslint-config/rules.js",
   "scripts": {
-    "test": "tslint -c ./test.ts --fix"
+    "test": "tslint ./test/*.ts"
   },
   "license": "MIT",
   "keywords": [
