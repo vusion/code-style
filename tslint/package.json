@@ -7,9 +7,9 @@
   "bugs": {
     "url": "https://github.com/vusion/code-style/issues"
   },
-  "main": "index.js",
+  "main": "./tslint-config/rules.js",
   "scripts": {
-    "test": "tslint -c ./all.js --fix"
+    "test": "tslint -c ./test.ts --fix"
   },
   "license": "MIT",
   "keywords": [
@@ -25,6 +25,7 @@
     "vusion"
   ],
   "devDependencies": {
+    "gulp-tslint": "^8.1.4",
     "tslint": "^5.17.0",
     "typescript": "^3.5.1"
   }

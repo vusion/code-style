@@ -65,6 +65,7 @@ module.exports = {
       "multiline": "always"
     }],
 
+    // 类型定义间的空格
     "typedef-whitespace": [true, {
       "call-signature": "nospace",
       "index-signature": "nospace",
@@ -73,6 +74,7 @@ module.exports = {
       "variable-declaration": "nospace"
     }],
 
+    // 空格
     "whitespace": [
       true,
       "check-branch",
