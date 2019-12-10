@@ -21,6 +21,7 @@ module.exports = {
         'vue/html-closing-bracket-spacing': [2],
         'vue/html-indent': [2, 4, {
             baseIndent: 0,
+            alignAttributesVertically: false,
             // attribute: 1,
             // closeBracket: 0,
         }],
