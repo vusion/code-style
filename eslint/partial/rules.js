@@ -180,7 +180,7 @@ module.exports = {
         // @unnessesary: 'line-comment-position': [2],
         'linebreak-style': [2],
         // @TODO: 'lines-around-comment',
-        'lines-between-class-members': [2],
+        'lines-between-class-members': [2, "always", { exceptAfterSingleLine: true }],
         // @useless: 'max-depth',
         // @useless: 'max-len',
         // @useless: 'max-lines',
