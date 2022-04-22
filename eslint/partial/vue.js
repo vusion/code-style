@@ -1,10 +1,8 @@
 module.exports = {
     extends: 'plugin:vue/recommended',
-    parser: 'vue-eslint-parser',
     parserOptions: {
-        parser: 'babel-eslint',
+        ecmaVersion: 2020,
         sourceType: 'module',
-        ecmaVersion: 2018,
     },
     plugins: ['vue'],
     rules: {

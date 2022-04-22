@@ -1,13 +1,19 @@
 <template>
-<article v-if="abc" :class="$style.root" disabled style="width: 100%" @click="test">
+  <article
+    v-if="abc"
+    :class="$style.root"
+    disabled
+    style="width: 100%"
+    @click="test"
+  >
     <slot></slot>
     <div v-if="foo"></div>
-</article>
+  </article>
 </template>
 
 <script>
 export default {
-    name: 'u-article',
+    name: 'UArticle',
     methods: {
         test(e) {
             switch (e) {
@@ -27,10 +33,10 @@ export default {
 
 <style module>
 .root {
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    width: 960px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  width: 960px;
 }
 </style>

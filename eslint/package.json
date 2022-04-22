@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-vusion",
   "description": "Sharable eslint config for Vusion",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "author": "Rainfore <rainforest92@126.com>",
   "repository": "vusion/eslint-config",
   "bugs": {
@@ -25,15 +25,14 @@
     "vusion"
   ],
   "peerDependencies": {
-    "eslint": "^7.3.1"
+    "eslint": "^7.32.0"
   },
   "devDependencies": {
-    "eslint": "^7.3.1"
+    "eslint": "^7.32.0"
   },
   "dependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint-plugin-chai-friendly": "^0.6.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-eslint-parser": "^7.1.0"
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-vue": "^8.6.0",
+    "vue-eslint-parser": "^8.3.0"
   }
 }
